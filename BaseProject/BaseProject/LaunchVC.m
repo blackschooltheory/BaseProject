@@ -1,0 +1,40 @@
+//
+//  LaunchVC.m
+//  BaseProject
+//
+//  Created by DLK on 2020/12/19.
+//  Copyright © 2020 DLK. All rights reserved.
+//
+
+#import "LaunchVC.h"
+
+@interface LaunchVC ()
+
+@end
+
+@implementation LaunchVC
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+//    UILabel *label=[[UILabel alloc]init];
+//    label.adjustsFontForContentSizeCategory
+//    
+//    UIImageView *imageV=[[UIImageView alloc]initWithFrame:self.view.frame];
+//    [self.view addSubview:imageV];
+//    imageV.contentMode=UIViewContentModeScaleAspectFill;
+    
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end
