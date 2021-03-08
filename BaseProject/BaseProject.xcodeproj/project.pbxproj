@@ -38,6 +38,7 @@
 		4ADE799C25BAC5A7004F0EBB /* DeviceOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE799B25BAC5A7004F0EBB /* DeviceOrientation.m */; };
 		4AE006F225BFA4B5001300EC /* LandscapeLeftVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE006F125BFA4B5001300EC /* LandscapeLeftVC.m */; };
 		4AE2C5C625BE5815003ED184 /* TransitionAnimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2C5C525BE5815003ED184 /* TransitionAnimate.m */; };
+		FC142D4A25F65A8D00D8765F /* StringToUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = FC142D4925F65A8D00D8765F /* StringToUnicode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,8 @@
 		4AE006F125BFA4B5001300EC /* LandscapeLeftVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandscapeLeftVC.m; sourceTree = "<group>"; };
 		4AE2C5C425BE5815003ED184 /* TransitionAnimate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionAnimate.h; sourceTree = "<group>"; };
 		4AE2C5C525BE5815003ED184 /* TransitionAnimate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimate.m; sourceTree = "<group>"; };
+		FC142D4825F65A8D00D8765F /* StringToUnicode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringToUnicode.h; sourceTree = "<group>"; };
+		FC142D4925F65A8D00D8765F /* StringToUnicode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringToUnicode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +144,6 @@
 			children = (
 				4AD6C1B225E0B8B60048A9CC /* Base */,
 				4A7CCE77259225CF00324B41 /* Control */,
-				4A7CCD1C25904BCA00324B41 /* unicodChangeText */,
 				4A7CCD0C258E261B00324B41 /* image */,
 				4A64C231257E5FE400C4C5F5 /* AppDelegate.h */,
 				4A64C232257E5FE400C4C5F5 /* AppDelegate.m */,
@@ -179,22 +181,15 @@
 			path = image;
 			sourceTree = "<group>";
 		};
-		4A7CCD1C25904BCA00324B41 /* unicodChangeText */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = unicodChangeText;
-			sourceTree = "<group>";
-		};
 		4A7CCE77259225CF00324B41 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				FC142D4725F65A4100D8765F /* StringToUnicode */,
 				4AD6C1BF25E3DF340048A9CC /* Calendars */,
 				4A14CC0325CB901600D29412 /* modelPresent */,
 				4A54BCD025C3E7F9000BA17B /* ForbidCatchScreen */,
 				4AE2C5C325BE57A5003ED184 /* TransitionAnimate */,
 				4ADE799925BAC271004F0EBB /* DeviceOrientation */,
-				4A7CCE7E259227FD00324B41 /* Other */,
 				4A7CCE7A259227BE00324B41 /* Performance */,
 				4A7CCE792592276C00324B41 /* Framework */,
 				4A7CCE78259225E700324B41 /* Function */,
@@ -227,13 +222,6 @@
 				4A7CCE832592282500324B41 /* Performance.m */,
 			);
 			path = Performance;
-			sourceTree = "<group>";
-		};
-		4A7CCE7E259227FD00324B41 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
 			sourceTree = "<group>";
 		};
 		4AD6C1B225E0B8B60048A9CC /* Base */ = {
@@ -274,6 +262,15 @@
 				4AE2C5C525BE5815003ED184 /* TransitionAnimate.m */,
 			);
 			path = TransitionAnimate;
+			sourceTree = "<group>";
+		};
+		FC142D4725F65A4100D8765F /* StringToUnicode */ = {
+			isa = PBXGroup;
+			children = (
+				FC142D4825F65A8D00D8765F /* StringToUnicode.h */,
+				FC142D4925F65A8D00D8765F /* StringToUnicode.m */,
+			);
+			path = StringToUnicode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +361,7 @@
 				4AD6C1C225E3DFEC0048A9CC /* CalendarsNotifVC.m in Sources */,
 				4A7CCE812592280D00324B41 /* FrameworkVC.m in Sources */,
 				4AE006F225BFA4B5001300EC /* LandscapeLeftVC.m in Sources */,
+				FC142D4A25F65A8D00D8765F /* StringToUnicode.m in Sources */,
 				4AD6C1B525E0B8F90048A9CC /* BaseViewController.m in Sources */,
 				4A950ED325BE9D200046CD46 /* PublicMethodManager.m in Sources */,
 				4ADE799C25BAC5A7004F0EBB /* DeviceOrientation.m in Sources */,

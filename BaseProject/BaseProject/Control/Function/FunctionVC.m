@@ -11,6 +11,7 @@
 #import "TransitionAnimate.h"
 #import "ForbidCatchScreenVC.h"
 #import "CalendarsNotifVC.h"
+#import "StringToUnicode.h"
 @interface FunctionVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSArray * dataArry;
@@ -78,6 +79,12 @@
         //系统日历写入事件
         CalendarsNotifVC *vc = [[CalendarsNotifVC alloc]init];
         vc.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    if (indexPath.row == 4) {
+        //字符串转换数字
+        StringToUnicode *vc = [[StringToUnicode alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
