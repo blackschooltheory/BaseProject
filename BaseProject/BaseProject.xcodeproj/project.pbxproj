@@ -38,6 +38,7 @@
 		4ADE799C25BAC5A7004F0EBB /* DeviceOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE799B25BAC5A7004F0EBB /* DeviceOrientation.m */; };
 		4AE006F225BFA4B5001300EC /* LandscapeLeftVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE006F125BFA4B5001300EC /* LandscapeLeftVC.m */; };
 		4AE2C5C625BE5815003ED184 /* TransitionAnimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2C5C525BE5815003ED184 /* TransitionAnimate.m */; };
+		FC142D4A25F65A8D00D8765F /* StringToUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = FC142D4925F65A8D00D8765F /* StringToUnicode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,8 @@
 		4AE006F125BFA4B5001300EC /* LandscapeLeftVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandscapeLeftVC.m; sourceTree = "<group>"; };
 		4AE2C5C425BE5815003ED184 /* TransitionAnimate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionAnimate.h; sourceTree = "<group>"; };
 		4AE2C5C525BE5815003ED184 /* TransitionAnimate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimate.m; sourceTree = "<group>"; };
+		FC142D4825F65A8D00D8765F /* StringToUnicode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringToUnicode.h; sourceTree = "<group>"; };
+		FC142D4925F65A8D00D8765F /* StringToUnicode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringToUnicode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,7 @@
 		4A7CCE77259225CF00324B41 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				FC142D4725F65A4100D8765F /* StringToUnicode */,
 				4AD6C1BF25E3DF340048A9CC /* Calendars */,
 				4A14CC0325CB901600D29412 /* modelPresent */,
 				4A54BCD025C3E7F9000BA17B /* ForbidCatchScreen */,
@@ -258,6 +262,15 @@
 				4AE2C5C525BE5815003ED184 /* TransitionAnimate.m */,
 			);
 			path = TransitionAnimate;
+			sourceTree = "<group>";
+		};
+		FC142D4725F65A4100D8765F /* StringToUnicode */ = {
+			isa = PBXGroup;
+			children = (
+				FC142D4825F65A8D00D8765F /* StringToUnicode.h */,
+				FC142D4925F65A8D00D8765F /* StringToUnicode.m */,
+			);
+			path = StringToUnicode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +361,7 @@
 				4AD6C1C225E3DFEC0048A9CC /* CalendarsNotifVC.m in Sources */,
 				4A7CCE812592280D00324B41 /* FrameworkVC.m in Sources */,
 				4AE006F225BFA4B5001300EC /* LandscapeLeftVC.m in Sources */,
+				FC142D4A25F65A8D00D8765F /* StringToUnicode.m in Sources */,
 				4AD6C1B525E0B8F90048A9CC /* BaseViewController.m in Sources */,
 				4A950ED325BE9D200046CD46 /* PublicMethodManager.m in Sources */,
 				4ADE799C25BAC5A7004F0EBB /* DeviceOrientation.m in Sources */,
