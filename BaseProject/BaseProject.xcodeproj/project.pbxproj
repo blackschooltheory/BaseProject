@@ -141,7 +141,6 @@
 			children = (
 				4AD6C1B225E0B8B60048A9CC /* Base */,
 				4A7CCE77259225CF00324B41 /* Control */,
-				4A7CCD1C25904BCA00324B41 /* unicodChangeText */,
 				4A7CCD0C258E261B00324B41 /* image */,
 				4A64C231257E5FE400C4C5F5 /* AppDelegate.h */,
 				4A64C232257E5FE400C4C5F5 /* AppDelegate.m */,
@@ -179,13 +178,6 @@
 			path = image;
 			sourceTree = "<group>";
 		};
-		4A7CCD1C25904BCA00324B41 /* unicodChangeText */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = unicodChangeText;
-			sourceTree = "<group>";
-		};
 		4A7CCE77259225CF00324B41 /* Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +186,6 @@
 				4A54BCD025C3E7F9000BA17B /* ForbidCatchScreen */,
 				4AE2C5C325BE57A5003ED184 /* TransitionAnimate */,
 				4ADE799925BAC271004F0EBB /* DeviceOrientation */,
-				4A7CCE7E259227FD00324B41 /* Other */,
 				4A7CCE7A259227BE00324B41 /* Performance */,
 				4A7CCE792592276C00324B41 /* Framework */,
 				4A7CCE78259225E700324B41 /* Function */,
@@ -227,13 +218,6 @@
 				4A7CCE832592282500324B41 /* Performance.m */,
 			);
 			path = Performance;
-			sourceTree = "<group>";
-		};
-		4A7CCE7E259227FD00324B41 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
 			sourceTree = "<group>";
 		};
 		4AD6C1B225E0B8B60048A9CC /* Base */ = {
@@ -513,18 +497,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8A3GDFPKRY;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BaseProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cn.hundsun.etrading;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlk.function;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "etrading-dev";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -533,18 +517,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8A3GDFPKRY;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BaseProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cn.hundsun.etrading;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlk.function;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "etrading-dev";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

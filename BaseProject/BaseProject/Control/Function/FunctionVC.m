@@ -11,6 +11,7 @@
 #import "TransitionAnimate.h"
 #import "ForbidCatchScreenVC.h"
 #import "CalendarsNotifVC.h"
+#include <stdlib.h>
 @interface FunctionVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSArray * dataArry;
@@ -70,9 +71,29 @@
     if (indexPath.row==2) {
         //禁止截屏功能
         
-        ForbidCatchScreenVC *vc=[[ForbidCatchScreenVC alloc]init];
-        vc.hidesBottomBarWhenPushed=YES;
-        [self.navigationController pushViewController:vc animated:YES];
+//        ForbidCatchScreenVC *vc=[[ForbidCatchScreenVC alloc]init];
+//        vc.hidesBottomBarWhenPushed=YES;
+//        [self.navigationController pushViewController:vc animated:YES];
+        
+        NSString *sss = @"今天打老虎";
+        
+//        |35|33|32|30|37|32|36|31|30|3d|3a|3d|3d|3d|3f|25|22|23|
+        NSString * p = @"ffffffca" ;
+      long num =  strtoul(p.UTF8String, 0, 16)^(0);
+        NSString *unicodeStr=[NSString stringWithFormat:@"\\u%x",num];
+        NSString *ggg = [self replaceUnicode:unicodeStr];
+        for (int i = 0; i<sss.length; i++) {
+            NSString *istr = [sss substringWithRange:NSMakeRange(i, 1)];
+//            int dataNum = strtol(istr.UTF8String, 0, 16);
+//            NSLog(@"%i",dataNum);
+          char str = [sss characterAtIndex:i];
+            
+            NSLog(@"%x",str);
+//            NSLog(@"%x",istr.UTF8String);
+//            long dataNum = strtoul(str.UTF8String, 0, 16);
+//            NSLog(@"%li",dataNum);
+        }
+        
     }
     if (indexPath.row==3) {
         //系统日历写入事件
@@ -80,6 +101,22 @@
         vc.hidesBottomBarWhenPushed=YES;
         [self.navigationController pushViewController:vc animated:YES];
     }
+}
+
+-(NSString *)replaceUnicode:(NSString *)unicodeStr
+{
+
+    if (unicodeStr.length == 0) {
+        return unicodeStr;
+    }
+
+    NSString *tempStr1 = [unicodeStr stringByReplacingOccurrencesOfString:@"\\u"withString:@"\\U"];
+    NSString *tempStr2 = [tempStr1 stringByReplacingOccurrencesOfString:@"\""withString:@"\\\""];
+    NSString *tempStr3 = [[@"\""stringByAppendingString:tempStr2] stringByAppendingString:@"\""];
+    NSData *tempData = [tempStr3 dataUsingEncoding:NSUTF8StringEncoding];
+    NSString* returnStr = [NSPropertyListSerialization propertyListWithData:tempData options:kCFPropertyListImmutable format:nil error:nil];
+    NSLog(@"%@",returnStr);
+    return [returnStr stringByReplacingOccurrencesOfString:@"\\r\\n"withString:@"\n"];
 }
 //取随机数 0--3 获取三个不同的数
 -(NSArray *)arcNum{

@@ -38,7 +38,7 @@
 //   在自己的手机上，测试设置了日历提醒定时；但是发现不能通知我；关机重启后可以正常收取通知
     // 当然日历与提醒事项的通知 没有极光推送这样的好；
     
-    _dataArry = @[@"给当前的日历添加提醒",@"系统添加提醒",@"添加提醒事项(单一的直接用提醒的比较少)"];
+    _dataArry = @[@"给当前的日历添加提醒",@"打开系统页面添加提醒",@"添加提醒事项(单一的直接用提醒的比较少)"];
     [self.view addSubview:self.tableView];
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -59,6 +59,9 @@
         //创建日历事件
         [self createCalendarsEvent];
         
+    }
+    if (indexPath.row == 1) {
+        //用系统的页面创建日历事件提醒
     }
     
     if (indexPath.row == 2) {
