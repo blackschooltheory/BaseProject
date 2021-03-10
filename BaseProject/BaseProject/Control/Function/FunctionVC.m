@@ -11,8 +11,11 @@
 #import "TransitionAnimate.h"
 #import "ForbidCatchScreenVC.h"
 #import "CalendarsNotifVC.h"
+<<<<<<< HEAD
 #include <stdlib.h>
+=======
 #import "StringToUnicode.h"
+>>>>>>> 2afab0411d910c75c83344a38775d153137e1981
 @interface FunctionVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSArray * dataArry;
