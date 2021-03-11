@@ -11,11 +11,7 @@
 #import "TransitionAnimate.h"
 #import "ForbidCatchScreenVC.h"
 #import "CalendarsNotifVC.h"
-<<<<<<< HEAD
-#include <stdlib.h>
-=======
 #import "StringToUnicode.h"
->>>>>>> 2afab0411d910c75c83344a38775d153137e1981
 @interface FunctionVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSArray * dataArry;
@@ -81,22 +77,29 @@
         
         NSString *sss = @"今天打老虎";
         
+        NSString *jin = @"今";
+     NSString * uni = [self utf8ToUnicode:jin];
+        NSLog(@"%@",uni);
+        int dataNum = strtoul(@"4eca".UTF8String, 0, 16);
+        NSLog(@"%i",dataNum);
+        NSString *unicodeStr=[NSString stringWithFormat:@"\\u%x",dataNum];
+        NSLog(@"%@",unicodeStr);
 //        |35|33|32|30|37|32|36|31|30|3d|3a|3d|3d|3d|3f|25|22|23|
-        NSString * p = @"ffffffca" ;
-      long num =  strtoul(p.UTF8String, 0, 16)^(0);
-        NSString *unicodeStr=[NSString stringWithFormat:@"\\u%x",num];
-        NSString *ggg = [self replaceUnicode:unicodeStr];
-        for (int i = 0; i<sss.length; i++) {
-            NSString *istr = [sss substringWithRange:NSMakeRange(i, 1)];
-//            int dataNum = strtol(istr.UTF8String, 0, 16);
-//            NSLog(@"%i",dataNum);
-          char str = [sss characterAtIndex:i];
-            
-            NSLog(@"%x",str);
-//            NSLog(@"%x",istr.UTF8String);
-//            long dataNum = strtoul(str.UTF8String, 0, 16);
-//            NSLog(@"%li",dataNum);
-        }
+//        NSString * p = @"ffffffca" ;
+//      long num =  strtoul(p.UTF8String, 0, 16)^(0);
+//        NSString *unicodeStr=[NSString stringWithFormat:@"\\u%x",num];
+//        NSString *ggg = [self replaceUnicode:unicodeStr];
+//        for (int i = 0; i<sss.length; i++) {
+//            NSString *istr = [sss substringWithRange:NSMakeRange(i, 1)];
+////            int dataNum = strtol(istr.UTF8String, 0, 16);
+////            NSLog(@"%i",dataNum);
+//          char str = [sss characterAtIndex:i];
+//
+//            NSLog(@"%x",str);
+////            NSLog(@"%x",istr.UTF8String);
+////            long dataNum = strtoul(str.UTF8String, 0, 16);
+////            NSLog(@"%li",dataNum);
+//        }
         
     }
     if (indexPath.row==3) {
@@ -112,6 +115,45 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
+
+//-(NSString *)strEncryption:(NSString *)encryptionStr{
+//    for (int i = 0; i<encryptionStr.length; i++) {
+//        NSString *pointStr = [encryptionStr substringWithRange:NSMakeRange(i,1)];
+//        //字符串转
+//        NSString * uni = [self utf8ToUnicode:jin];
+//        int pointNum =
+//    }
+//}
+
+-(NSString *) utf8ToUnicode:(NSString *)string
+{
+   NSUInteger length = [string length];
+    NSMutableString *s = [NSMutableString stringWithCapacity:0];
+    
+   for (int i =0;i < length; i++)
+    {
+       unichar _char = [string characterAtIndex:i];
+        //判断是否为英文和数字
+       if (_char <= '9' && _char >='0')
+        {
+            [s appendFormat:@"%@",[string substringWithRange:NSMakeRange(i,1)]];
+        }
+       else if(_char >='a' && _char <='z')
+        {
+            [s appendFormat:@"%@",[string substringWithRange:NSMakeRange(i,1)]];
+        }
+       else if(_char >='A' && _char <='Z')
+        {
+            [s appendFormat:@"%@",[string substringWithRange:NSMakeRange(i,1)]];
+        }
+       else
+        {
+            [s appendFormat:@"\\u%x",[string characterAtIndex:i]];
+        }
+    }
+   return s;
+}
+
 
 -(NSString *)replaceUnicode:(NSString *)unicodeStr
 {
