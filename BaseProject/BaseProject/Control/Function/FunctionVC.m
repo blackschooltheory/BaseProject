@@ -71,35 +71,10 @@
     if (indexPath.row==2) {
         //禁止截屏功能
         
-//        ForbidCatchScreenVC *vc=[[ForbidCatchScreenVC alloc]init];
-//        vc.hidesBottomBarWhenPushed=YES;
-//        [self.navigationController pushViewController:vc animated:YES];
-        
-        NSString *sss = @"今天打老虎";
-        
-        NSString *jin = @"今";
-     NSString * uni = [self utf8ToUnicode:jin];
-        NSLog(@"%@",uni);
-        int dataNum = strtoul(@"4eca".UTF8String, 0, 16);
-        NSLog(@"%i",dataNum);
-        NSString *unicodeStr=[NSString stringWithFormat:@"\\u%x",dataNum];
-        NSLog(@"%@",unicodeStr);
-//        |35|33|32|30|37|32|36|31|30|3d|3a|3d|3d|3d|3f|25|22|23|
-//        NSString * p = @"ffffffca" ;
-//      long num =  strtoul(p.UTF8String, 0, 16)^(0);
-//        NSString *unicodeStr=[NSString stringWithFormat:@"\\u%x",num];
-//        NSString *ggg = [self replaceUnicode:unicodeStr];
-//        for (int i = 0; i<sss.length; i++) {
-//            NSString *istr = [sss substringWithRange:NSMakeRange(i, 1)];
-////            int dataNum = strtol(istr.UTF8String, 0, 16);
-////            NSLog(@"%i",dataNum);
-//          char str = [sss characterAtIndex:i];
-//
-//            NSLog(@"%x",str);
-////            NSLog(@"%x",istr.UTF8String);
-////            long dataNum = strtoul(str.UTF8String, 0, 16);
-////            NSLog(@"%li",dataNum);
-//        }
+        ForbidCatchScreenVC *vc=[[ForbidCatchScreenVC alloc]init];
+        vc.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    
         
     }
     if (indexPath.row==3) {
@@ -116,14 +91,25 @@
     }
 }
 
-//-(NSString *)strEncryption:(NSString *)encryptionStr{
-//    for (int i = 0; i<encryptionStr.length; i++) {
-//        NSString *pointStr = [encryptionStr substringWithRange:NSMakeRange(i,1)];
-//        //字符串转
-//        NSString * uni = [self utf8ToUnicode:jin];
-//        int pointNum =
-//    }
-//}
+//将字符装换为数字
+-(NSString *)strEncryption:(NSString *)encryptionStr{
+    NSMutableArray *arrys = [[NSMutableArray alloc]init];
+    for (int i = 0; i<encryptionStr.length; i++) {
+        NSString *pointStr = [encryptionStr substringWithRange:NSMakeRange(i,1)];
+        //字符串转
+        NSString * uni = [self utf8ToUnicode:pointStr];
+        NSString *lastNum = uni;
+        if (uni.length>3) {
+            lastNum = [uni substringFromIndex:2];
+        }
+      
+        long pointNum = strtoul(lastNum.UTF8String, 0, 16)-i;
+        [arrys addObject:[NSString stringWithFormat:@"%i",pointNum]];
+    }
+    return  [arrys componentsJoinedByString:@"|"];
+    
+    
+}
 
 -(NSString *) utf8ToUnicode:(NSString *)string
 {

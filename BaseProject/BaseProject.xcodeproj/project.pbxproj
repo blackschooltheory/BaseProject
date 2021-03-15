@@ -32,6 +32,8 @@
 		4A7CCE9B259228C900324B41 /* menu_0_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7CCE8F259228C900324B41 /* menu_0_sel@2x.png */; };
 		4A7CCE9C259228C900324B41 /* menu_2_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7CCE90259228C900324B41 /* menu_2_sel@3x.png */; };
 		4A950ED325BE9D200046CD46 /* PublicMethodManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A950ED225BE9D200046CD46 /* PublicMethodManager.m */; };
+		4AC3768625FF09CA00026C69 /* StringChageType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3768525FF09CA00026C69 /* StringChageType.m */; };
+		4AC3768C25FF376500026C69 /* DLKWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3768B25FF376500026C69 /* DLKWebViewVC.m */; };
 		4AD6C1B525E0B8F90048A9CC /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD6C1B425E0B8F90048A9CC /* BaseViewController.m */; };
 		4AD6C1BC25E0DE3B0048A9CC /* ModelLanscapeLeftVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD6C1BB25E0DE3B0048A9CC /* ModelLanscapeLeftVC.m */; };
 		4AD6C1C225E3DFEC0048A9CC /* CalendarsNotifVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD6C1C125E3DFEC0048A9CC /* CalendarsNotifVC.m */; };
@@ -78,6 +80,10 @@
 		4A7CCE90259228C900324B41 /* menu_2_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_2_sel@3x.png"; sourceTree = "<group>"; };
 		4A950ED125BE9D200046CD46 /* PublicMethodManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicMethodManager.h; sourceTree = "<group>"; };
 		4A950ED225BE9D200046CD46 /* PublicMethodManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicMethodManager.m; sourceTree = "<group>"; };
+		4AC3768425FF09CA00026C69 /* StringChageType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringChageType.h; sourceTree = "<group>"; };
+		4AC3768525FF09CA00026C69 /* StringChageType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringChageType.m; sourceTree = "<group>"; };
+		4AC3768A25FF376500026C69 /* DLKWebViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLKWebViewVC.h; sourceTree = "<group>"; };
+		4AC3768B25FF376500026C69 /* DLKWebViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLKWebViewVC.m; sourceTree = "<group>"; };
 		4AD6C1B325E0B8F90048A9CC /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		4AD6C1B425E0B8F90048A9CC /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		4AD6C1BA25E0DE3B0048A9CC /* ModelLanscapeLeftVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelLanscapeLeftVC.h; sourceTree = "<group>"; };
@@ -184,6 +190,7 @@
 		4A7CCE77259225CF00324B41 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				4AC3768925FF373F00026C69 /* WKWebVIew */,
 				FC142D4725F65A4100D8765F /* StringToUnicode */,
 				4AD6C1BF25E3DF340048A9CC /* Calendars */,
 				4A14CC0325CB901600D29412 /* modelPresent */,
@@ -222,6 +229,15 @@
 				4A7CCE832592282500324B41 /* Performance.m */,
 			);
 			path = Performance;
+			sourceTree = "<group>";
+		};
+		4AC3768925FF373F00026C69 /* WKWebVIew */ = {
+			isa = PBXGroup;
+			children = (
+				4AC3768A25FF376500026C69 /* DLKWebViewVC.h */,
+				4AC3768B25FF376500026C69 /* DLKWebViewVC.m */,
+			);
+			path = WKWebVIew;
 			sourceTree = "<group>";
 		};
 		4AD6C1B225E0B8B60048A9CC /* Base */ = {
@@ -269,6 +285,8 @@
 			children = (
 				FC142D4825F65A8D00D8765F /* StringToUnicode.h */,
 				FC142D4925F65A8D00D8765F /* StringToUnicode.m */,
+				4AC3768425FF09CA00026C69 /* StringChageType.h */,
+				4AC3768525FF09CA00026C69 /* StringChageType.m */,
 			);
 			path = StringToUnicode;
 			sourceTree = "<group>";
@@ -355,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AC3768C25FF376500026C69 /* DLKWebViewVC.m in Sources */,
 				4A64C239257E5FE400C4C5F5 /* ViewController.m in Sources */,
 				4AE2C5C625BE5815003ED184 /* TransitionAnimate.m in Sources */,
 				4A54BCD325C3E8C4000BA17B /* ForbidCatchScreenVC.m in Sources */,
@@ -362,6 +381,7 @@
 				4A7CCE812592280D00324B41 /* FrameworkVC.m in Sources */,
 				4AE006F225BFA4B5001300EC /* LandscapeLeftVC.m in Sources */,
 				FC142D4A25F65A8D00D8765F /* StringToUnicode.m in Sources */,
+				4AC3768625FF09CA00026C69 /* StringChageType.m in Sources */,
 				4AD6C1B525E0B8F90048A9CC /* BaseViewController.m in Sources */,
 				4A950ED325BE9D200046CD46 /* PublicMethodManager.m in Sources */,
 				4ADE799C25BAC5A7004F0EBB /* DeviceOrientation.m in Sources */,
@@ -513,9 +533,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QKE34TA3JX;
 				INFOPLIST_FILE = BaseProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,9 +553,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QKE34TA3JX;
 				INFOPLIST_FILE = BaseProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
