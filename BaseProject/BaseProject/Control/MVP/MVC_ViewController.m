@@ -1,25 +1,27 @@
 //
-//  DLKWebViewVC.m
+//  MVC_ViewController.m
 //  BaseProject
 //
-//  Created by dlk on 2021/3/15.
+//  Created by dlk on 2021/3/22.
 //  Copyright © 2021 DLK. All rights reserved.
 //
 
-#import "DLKWebViewVC.h"
-#import <WebKit/WebKit.h>
-
-@interface DLKWebViewVC ()
+#import "MVC_ViewController.h"
+#import "MVP_Model.h"
+#import "MVP_Presenter.h"
+@interface MVC_ViewController ()<MVC_ViewProtcol>
 
 @end
 
-@implementation DLKWebViewVC
+@implementation MVC_ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
     
+}
+-(void)updateDataArry:(NSMutableArray<MVP_Model *> *)arry{
+    //代理更新tableView的数据
 }
 
 /*

@@ -1,24 +1,26 @@
 //
-//  DLKWebViewVC.m
+//  ProjectResourceManager.m
 //  BaseProject
 //
-//  Created by dlk on 2021/3/15.
+//  Created by dlk on 2021/3/26.
 //  Copyright © 2021 DLK. All rights reserved.
 //
 
-#import "DLKWebViewVC.h"
-#import <WebKit/WebKit.h>
+#import "ProjectResourceManager.h"
 
-@interface DLKWebViewVC ()
+@interface ProjectResourceManager ()
 
 @end
 
-@implementation DLKWebViewVC
+@implementation ProjectResourceManager
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    
+    NSString *homePath = NSHomeDirectory();
+    NSLog(@"%@",homePath);
+    
     
 }
 
