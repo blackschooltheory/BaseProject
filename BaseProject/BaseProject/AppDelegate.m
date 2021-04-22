@@ -130,7 +130,10 @@
 }
 
 
-
+//获取推送的deviceToken
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    
+}
 
 
 

@@ -18,13 +18,20 @@
     [super viewDidLoad];
    
 }
-
+//-(UIStatusBarStyle)preferredStatusBarStyle
+//{
+//
+//    return UIStatusBarStyleDefault;
+//
+//}
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     //导航栏横屏方式
     AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     appDelegate.allowRotation = NO;//(以上2行代码,可以理解为打开横屏开关)
     [self setNewOrientation:NO];//调用转屏代码
+//    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+//    [self preferredStatusBarStyle];
 }
 - (void)setNewOrientation:(BOOL)fullscreen{
     if (fullscreen) {

@@ -14,6 +14,9 @@
 #import "StringToUnicode.h"
 #import "GCDVC.h"
 #import "ProjectResourceManager.h"
+#import "BlockVC.h"
+#import "RunloopVC.h"
+#import "RunLoopFunctionVC.h"
 @interface FunctionVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSArray * dataArry;
@@ -24,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _dataArry = @[@"横竖屏控制",@"转屏动画",@"截屏获取通知（iOS 不能实现禁止截屏功能）",@"系统日历写入提示信息",@"设备root环境监测",@"UTF-8与Unicode转换",@"GCD",@"项目资源文件管理"];
+    _dataArry = @[@"横竖屏控制",@"转屏动画",@"截屏获取通知（iOS 不能实现禁止截屏功能）",@"系统日历写入提示信息",@"设备root环境监测",@"UTF-8与Unicode转换",@"GCD",@"项目资源文件管理",@"Block",@"Runloop"];
     [self.view addSubview:self.tableView];
     
 }
@@ -103,6 +106,16 @@
     }
     if (indexPath.row == 7) {
         ProjectResourceManager *vc = [[ProjectResourceManager alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    if (indexPath.row == 8) {
+        BlockVC *vc = [[BlockVC alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    if (indexPath.row == 9) {
+        RunLoopFunctionVC *vc = [[RunLoopFunctionVC alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     }
