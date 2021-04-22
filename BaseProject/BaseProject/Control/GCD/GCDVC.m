@@ -9,9 +9,6 @@
 #import "GCDVC.h"
 #import "OneVC.h"
 #import "ThreeVC.h"
-
-@interface GCDVC ()
-@property(nonatomic,strong)NSThread *thread;
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 #import <objc/message.h>
@@ -22,6 +19,7 @@
     NSThread *thread ;
 }
 @property(nonatomic,assign)BOOL isStop;
+@property(nonatomic,strong)NSThread *thread;
 @end
 
 @implementation GCDVC
@@ -60,6 +58,27 @@
 }
 
 
+-(void)createQueue{
+    
+    NSBlockOperation  *block = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"%@",[NSThread currentThread]);
+    }];
+    
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    
+    [queue addOperation:block];
+    
+    queue.maxConcurrentOperationCount =1 ;//指的是一个队列中能并行的最大操作数
+    [queue setSuspended:YES];// 设置暂停与重启
+  //  queue.isSuspended ;//判断是否暂停挂起操作
+    [queue waitUntilAllOperationsAreFinished];//阻塞当前线程，直到队列执行完成
+    [queue addOperations:@[] waitUntilFinished:YES]; //waitUntilFinished 表示是否阻塞当前线程
+    [queue cancelAllOperations];//取消所有的操作，不能重启；
+    
+    
+    
+}
 
 - (void) createOperation{
     //两种operation  invocation  blockOperation
@@ -68,6 +87,12 @@
     NSLog(@"start===");
     NSInvocationOperation *operation1 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(operationxxx) object:nil];
     
+    [operation1 setCompletionBlock:^{
+            //operation1 执行完成后执行 block 的方法
+    }];
+    
+   NSArray *arry =  operation1.dependencies ; //当前Operation 的依赖
+    [operation1 waitUntilFinished];//阻塞当前线程 等待 operation 执行完成
     
 //    [operation1 cancel];//取消掉要执行的operation
 //    BOOL isCancle =  operation1.isCancelled ;// 是否取消
@@ -239,9 +264,9 @@ static void ObserverCallback (CFRunLoopObserverRef observerRef , CFRunLoopActivi
 //    NSLog(@"%@", OneVCTitleStr);
 //    NSLog(@"%f",OneVCTime);
 //    [self operationCreate];
-    if (activity == kCFRunLoopBeforeWaiting) {
-        //即将进入休眠模式
-    }
+//    if (activity == kCFRunLoopBeforeWaiting) {
+//        //即将进入休眠模式
+//    }
 }
 
 -(void)runloop3{
@@ -345,9 +370,9 @@ static void ObserverCallback (CFRunLoopObserverRef observerRef , CFRunLoopActivi
         NSLog(@"4======%@",[NSThread currentThread]);
     });
     NSLog(@"end==========");
+}
     
 //    [NSRunLoop currentRunLoop]
-=======
 //-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 //    [self performSelector:@selector(clickSome) onThread:thread withObject:nil waitUntilDone:YES];
 //}
@@ -356,9 +381,7 @@ static void ObserverCallback (CFRunLoopObserverRef observerRef , CFRunLoopActivi
 }
 
 
--(void)btnClick{
-    [self createOperation];
-}
+
 
 -(void)semphore1{
     //信号量用法
