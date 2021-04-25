@@ -12,7 +12,29 @@
 #define WebViewDefault 1 // 标准化的 Wkwebview 加载 html方法与方法回调
 #define WebViewInject 1 //注入的方式 WKWebView 处理HTML  (不用修改js 代码可以实现JS与OC交互，实现UIWebView 转换到WKWebView)
 
-@interface DLKWebViewVC ()<WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler>
+@interface dlkScriptMessageHandel: NSObject<WKScriptMessageHandler>
+@property (nonatomic,weak)id<WKScriptMessageHandler> dlkScriptMessage;
+
+-(instancetype)initDelegate:(id<WKScriptMessageHandler>)scriptDelegate;
+@end
+
+@implementation dlkScriptMessageHandel
+-(instancetype)initDelegate:(id<WKScriptMessageHandler>)scriptDelegate{
+    self = [ super init];
+    if (self) {
+        _dlkScriptMessage = scriptDelegate;
+    }
+    return  self;
+}
+-(void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
+    
+}
+@end
+
+
+
+@interface DLKWebViewVC ()<WKUIDelegate,WKNavigationDelegate>
+//,WKNavigationDelegate,WKScriptMessageHandle
 @property(nonatomic,strong)WKWebView *wkWebView;
 
 @end
@@ -28,24 +50,32 @@
 #else
     NSLog(@"数据");
 #endif
+    
+    
+    NSString *indexPatch = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    NSString *mainPatch = [[NSBundle mainBundle] pathForResource:@"html5" ofType:@""]; //若是 folder 文件必须先获取到 folder 文件夹名称的位置，然后再拼接文件路径地址。
+    
+    NSString *urlHtml = [[NSString alloc]initWithContentsOfFile:indexPatch encoding:NSUTF8StringEncoding error:nil];
+    
+//    [_wkWebView loadFileURL:[NSURL fileURLWithPath:indexPatch] allowingReadAccessToURL:[NSURL fileURLWithPath:indexPatch]] ;
 
+//    allowingReadAccessToURL  这个入参必须是一个正常的url 路径
+    
+    
+//    [_wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:indexPatch]]];
+    
+    [_wkWebView loadHTMLString:urlHtml baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+
+    
+    _wkWebView.allowsBackForwardNavigationGestures=YES;
+    WKBackForwardList * backForwardList = [_wkWebView backForwardList];
+    
+    [_wkWebView setValue:backForwardList forKey:@"backForwardList"];
+    
+    UITextField *text = [[UITextField alloc]init];
+    text.placeholder
 
 }
-
-
--(WKWebViewConfiguration *)initwebViewConfig{
-    //创建wkwebView 的config
-    WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc]init];
-    
-//    //自定义的WKScriptMessageHandler 是为了解决内存不释放的问题
-//    WKScriptMessageHandler *weakScriptMessageDelegate = [[WKScriptMessageHandler alloc] initWithDelegate:self];
-    WKUserContentController *userContent = config.userContentController;
-    [userContent addScriptMessageHandler:self name:@"xxxfunctionName"];//直接用self 会导致内存不释放问题
-    
-    
-    return config;
-}
-
 -(WKWebView *)wkWebView{
     //初始化 wkWebView 对象
     if (!_wkWebView) {
@@ -55,11 +85,64 @@
     }
     return _wkWebView;
 }
--(void)initWkWebViewConfig{
-//    _wkWebView
+
+#pragma mark -- UIDelegate  代理
+-(void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
     
+//    NSLog(message);
+//    completionHandler();
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"HTML的弹出框" message:message?:@"" preferredStyle:UIAlertControllerStyleAlert];
+       [alertController addAction:([UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+           completionHandler();
+       }])];
+       [self presentViewController:alertController animated:YES completion:nil];
     
 }
+-(void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:message?:@"" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:([UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            completionHandler(NO);
+        }])];
+        [alertController addAction:([UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            completionHandler(YES);
+        }])];
+        [self presentViewController:alertController animated:YES completion:nil];
+}
+
+-(void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:prompt message:@"" preferredStyle:UIAlertControllerStyleAlert];
+       [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+           textField.text = defaultText;
+       }];
+       [alertController addAction:([UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+           completionHandler(alertController.textFields[0].text?:@"");
+       }])];
+       [self presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark-----这个涉及到导航栏重定向
+
+/*
+ 1 .前端 target="_blank" 设置后无法加载页面 和 window.open(url) 无法打开新页面
+ 原因：两者都是要在新窗口打开，判断下当前请求的targetFrame是不是MainFrame，不是则要在主动加载链接
+2.界面重定向打不开页面
+ */
+
+//上面两点的问题结局方法
+-(WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures{
+    if (!navigationAction.targetFrame.isMainFrame) {
+        [webView loadRequest:navigationAction.request];
+    }
+    return nil;
+}
+
+
+-(void)initWkWebViewConfig{
+}
+
+
+#pragma mark--------WKNavigationDelegate
 
 
 /*

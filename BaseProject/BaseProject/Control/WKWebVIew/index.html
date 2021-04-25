@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+        <!-- 中文乱码要加这句 -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>测试页面</title>
+    </head>
+    <body>
+    <p>Hello world 你好！</p>
+    <button onclick="btnAlertClick()"> alert按钮</button>
+    <button onclick="btnConfirmClick()"> commit 按钮</button>
+    <button onclick="btnPromptClick()">prompt 按钮</button>
+    <button onclick="openNewClick()">打开心新的页面</button>
+    <script>
+        function btnAlertClick() {
+            alert("调用alert方法");
+        }
+        function btnConfirmClick() {
+            confirm("调用confirm");
+        }
+        function btnPromptClick() {
+          var str =  prompt("请输入","您可以在这里输入");
+          alert(str);
+        }
+        function openNewClick() {
+            window.location.href="https://www.baidu.com";
+        }
+        //window.webkit.messageHandlers.CallApp.postMessage("1234567");button
+    </script>
+    </body>
+</html>
