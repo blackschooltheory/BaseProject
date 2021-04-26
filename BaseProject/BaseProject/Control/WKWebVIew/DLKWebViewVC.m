@@ -27,6 +27,9 @@
     return  self;
 }
 -(void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
+    NSLog(@"message");
+}
+-(void)removeDlkScriptMessage:(NSSet *)objects{
     
 }
 @end
@@ -67,19 +70,25 @@
     [_wkWebView loadHTMLString:urlHtml baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
 
     
-    _wkWebView.allowsBackForwardNavigationGestures=YES;
-    WKBackForwardList * backForwardList = [_wkWebView backForwardList];
-    
-    [_wkWebView setValue:backForwardList forKey:@"backForwardList"];
-    
-    UITextField *text = [[UITextField alloc]init];
-    text.placeholder
+//    _wkWebView.allowsBackForwardNavigationGestures=YES;
+//    WKBackForwardList * backForwardList = [_wkWebView backForwardList];
+//
+//    [_wkWebView setValue:backForwardList forKey:@"backForwardList"];
+//
 
 }
 -(WKWebView *)wkWebView{
     //初始化 wkWebView 对象
     if (!_wkWebView) {
-        _wkWebView = [[WKWebView alloc]initWithFrame:self.view.frame];
+        dlkScriptMessageHandel *handel = [[dlkScriptMessageHandel alloc]init];
+        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc]init];
+        WKUserContentController *userContent = [[WKUserContentController alloc]init];
+        [userContent addScriptMessageHandler:handel name:@"showJSToOC"];
+        configuration.userContentController =userContent;
+        
+        
+        
+        _wkWebView = [[WKWebView alloc]initWithFrame:self.view.frame configuration:configuration];
         _wkWebView.UIDelegate = self;
         _wkWebView.navigationDelegate = self;
     }
@@ -137,8 +146,21 @@
     return nil;
 }
 
+#pragma mark---------WKNavigationDeletegate
 
--(void)initWkWebViewConfig{
+
+
+-(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
+    //开始临时的导航
+}
+//-(BOOL)webView:(WKWebView *)webView shouldPreviewElement:(WKPreviewElementInfo *)elementInfo{
+//    return YES;
+//}
+-(void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
+    //开始提交
+}
+-(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
+    //导航栏加载结束
 }
 
 

@@ -14,12 +14,36 @@
 #import <objc/message.h>
 
 
+@interface modelObjc : NSObject
+
+@property(nonatomic,strong)NSString *name;
+
+
+@end
+
+@implementation modelObjc
+
+-(void)setName:(NSString *)name{
+        _name = name;
+}
+
+-(void)showOutLog{
+        NSLog(@"姓名==%@",_name);
+    
+}
+@end
+
+
+
+
 @interface GCDVC ()
 {
     NSThread *thread ;
 }
 @property(nonatomic,assign)BOOL isStop;
 @property(nonatomic,strong)NSThread *thread;
+@property(atomic,assign) NSInteger num;
+@property(nonatomic,strong) NSString *gcdName;
 @end
 
 @implementation GCDVC
@@ -46,7 +70,108 @@
     [self.view addSubview:button];
     [button addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
 
+    _num =0;
     
+}
+
+-(void)btnClick{
+//    _num = 100 ;
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        [self ticket];
+//    });
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        [self ticket];
+//    });
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        [self ticket];
+//    });
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        [self ticket];
+//    });
+    
+//    [self  sss];
+    NSLog(@"%i",_num);
+    [self safety];
+}
+-(void)safety{
+    _num =1;
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        @synchronized (self) {
+//            for (int i =0; i<10000;i++) {
+////                self.num = self.num +1;
+//                _num ++ ;
+//            }
+//        }
+////        @synchronized (self) {
+////            _num = _num ++;
+////            NSLog(@"----%i-----",_num);
+////        }
+////        _num = ++ _num ;
+////        _num = ++_num ;
+////        NSLog(@"----%i-----",_num);
+//
+//
+//    });
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        @synchronized (self) {
+//            for (int i =0; i<10000;i++) {
+//    //            self.num = self.num +1;
+//                _num = _num ++;
+//            }
+//        }
+//    });
+    
+    
+}
+
+-(void)ticket{
+    @synchronized (self) {
+        if (_num == 0) {
+            NSLog(@"没票了");
+        }else{
+            
+            NSLog(@"第%i票",_num);
+            _num --;
+        }
+    }
+    
+}
+
+
+-(void)sss{
+//    modelObjc *mm = [[modelObjc alloc]init];
+//    mm.name = @"小米";
+    self.gcdName = @"小米";
+    
+    dispatch_queue_t queue =  dispatch_queue_create("com.dlk", DISPATCH_QUEUE_SERIAL);
+    
+    dispatch_async(queue, ^{
+        @synchronized (self) {
+            self.gcdName = @"小华";
+        }
+       
+    });
+//    dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+    dispatch_async(queue, ^{
+        @synchronized (self) {
+            NSLog(@"%@",self.gcdName);
+//            [mm showOutLog];
+        }
+       
+//        dispatch_semaphore_signal(sem);
+    });
+    
+//    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+   
+//    dispatch_barrier_sync(queue, ^{
+//        NSLog(@"先执行小华");
+//    });
+    dispatch_async(queue, ^{
+        @synchronized (self) {
+            self.gcdName = @"小果";
+        }
+        
+    });
 }
 
 
@@ -255,19 +380,19 @@ static void ObserverCallback (CFRunLoopObserverRef observerRef , CFRunLoopActivi
     
 }
 
--(void)btnClick{
-    ThreeVC *vc = [[ThreeVC alloc]init];
-    vc.modalPresentationStyle =  0 ;
-    [self presentViewController:vc animated:YES completion:nil];
-    
-    
-//    NSLog(@"%@", OneVCTitleStr);
-//    NSLog(@"%f",OneVCTime);
-//    [self operationCreate];
-//    if (activity == kCFRunLoopBeforeWaiting) {
-//        //即将进入休眠模式
-//    }
-}
+//-(void)btnClick{
+////    ThreeVC *vc = [[ThreeVC alloc]init];
+////    vc.modalPresentationStyle =  0 ;
+////    [self presentViewController:vc animated:YES completion:nil];
+//
+//    [self test6];
+////    NSLog(@"%@", OneVCTitleStr);
+////    NSLog(@"%f",OneVCTime);
+////    [self operationCreate];
+////    if (activity == kCFRunLoopBeforeWaiting) {
+////        //即将进入休眠模式
+////    }
+//}
 
 -(void)runloop3{
     //线程保活，或者保活后去除保活状态
@@ -381,7 +506,11 @@ static void ObserverCallback (CFRunLoopObserverRef observerRef , CFRunLoopActivi
 }
 
 
+#pragma mark------group
 
+-(void)testGCDGroup{
+//    dispatch_group_t  *group = dispatch_group_create();
+}
 
 -(void)semphore1{
     //信号量用法

@@ -11,7 +11,8 @@
     <button onclick="btnAlertClick()"> alert按钮</button>
     <button onclick="btnConfirmClick()"> commit 按钮</button>
     <button onclick="btnPromptClick()">prompt 按钮</button>
-    <button onclick="openNewClick()">打开心新的页面</button>
+    <button onclick="openNewClick()">打开新的页面</button>
+    <button onclick="openOCClick()">调用OC方法</button>
     <script>
         function btnAlertClick() {
             alert("调用alert方法");
@@ -25,6 +26,9 @@
         }
         function openNewClick() {
             window.location.href="https://www.baidu.com";
+        }
+        function openOCClick() {
+            window.webkit.messageHandlers.showJSToOC.postMessage("1234567");
         }
         //window.webkit.messageHandlers.CallApp.postMessage("1234567");button
     </script>
