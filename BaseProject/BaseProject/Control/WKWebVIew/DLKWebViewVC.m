@@ -29,9 +29,6 @@
 -(void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     NSLog(@"message");
 }
--(void)removeDlkScriptMessage:(NSSet *)objects{
-    
-}
 @end
 
 
@@ -48,11 +45,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-#ifdef WebViewDefault
-    [self.view addSubview:self.wkWebView];
-#else
-    NSLog(@"数据");
-#endif
+
     
     
     NSString *indexPatch = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
@@ -67,7 +60,7 @@
     
 //    [_wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:indexPatch]]];
     
-    [_wkWebView loadHTMLString:urlHtml baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+    [self.wkWebView loadHTMLString:urlHtml baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
 
     
 //    _wkWebView.allowsBackForwardNavigationGestures=YES;
@@ -75,6 +68,16 @@
 //
 //    [_wkWebView setValue:backForwardList forKey:@"backForwardList"];
 //
+    
+    
+#ifdef WebViewDefault
+    UIView *vvvvv = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [PublicMethodManager screenWith], [PublicMethodManager screenHeight])];
+    [self.view addSubview:vvvvv];
+    
+    [vvvvv addSubview:self.wkWebView];
+#else
+    NSLog(@"数据");
+#endif
 
 }
 -(WKWebView *)wkWebView{
@@ -148,19 +151,54 @@
 
 #pragma mark---------WKNavigationDeletegate
 
+// 是否允许开始请求，这个地方可以给要加载或者要跳转的网页加入不同的东西
+-(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
+    
+    NSLog(@"是否允许请求");
+    decisionHandler(WKNavigationActionPolicyAllow);//可以设置允许与不允许，可以阻止网页请求
+    
+}
+//是否允许响应请求（加载或者跳转网页时，会调用），可以给这个阶段网页添加处理
+-(void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
+    NSLog(@"是否允许响应");
+    decisionHandler(WKNavigationResponsePolicyAllow); // 可以设置允许与不允许，可以阻止网页响应
+}
 
 
 -(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
     //开始临时的导航
+    NSLog(@"是否StartProvisional");
 }
-//-(BOOL)webView:(WKWebView *)webView shouldPreviewElement:(WKPreviewElementInfo *)elementInfo{
-//    return YES;
-//}
 -(void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
     //开始提交
+    NSLog(@"是否开始提交");
 }
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     //导航栏加载结束
+    NSLog(@"是否结束");
+}
+-(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{
+    //加载失败
+    NSLog(@"加载过程出现失败");
+}
+////收到重定向
+//-(void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation{
+//    NSLog(@"重定向");
+//}
+//// https 身份验证
+//-(void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler{
+//
+//}
+
+-(void)webViewWebContentProcessDidTerminate:(WKWebView *)webView{
+    //进程结束
+    NSLog(@"进程结束");
+}
+
+-(void)dealloc{
+    
+    [_wkWebView.configuration.userContentController removeScriptMessageHandlerForName:@"showJSToOC"];
+    NSLog(@"webView 对象清除");
 }
 
 
