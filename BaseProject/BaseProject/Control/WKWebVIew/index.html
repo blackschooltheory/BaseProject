@@ -29,7 +29,9 @@
         }
         function openOCClick() {
          //window.webkit.messageHandlers.showJSToOC.postMessage("1234567");
-          window.prompt("我要调用OC的方法");
+          //window.prompt("我要调用OC的方法");
+          //jsToOCObjc.returnOCData("funcname","天天显示");
+          jsToOCObjc.evaluteOCFunction("funcname","天天显示")
         }
         //window.webkit.messageHandlers.CallApp.postMessage("1234567");button
     </script>

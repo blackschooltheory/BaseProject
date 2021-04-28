@@ -59,6 +59,7 @@
 		4AEFF723260D7ED8005771D0 /* ProjectResourceViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFF722260D7ED8005771D0 /* ProjectResourceViewModel.m */; };
 		4AEFF727260D7FC9005771D0 /* ProjectResourceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFF726260D7FC9005771D0 /* ProjectResourceView.m */; };
 		FC142D4A25F65A8D00D8765F /* StringToUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = FC142D4925F65A8D00D8765F /* StringToUnicode.m */; };
+		FC5BD6AA2638445D000DF0B6 /* UserContent.js in Resources */ = {isa = PBXBuildFile; fileRef = FC5BD6A92638445D000DF0B6 /* UserContent.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,6 +152,7 @@
 		4AEFF726260D7FC9005771D0 /* ProjectResourceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectResourceView.m; sourceTree = "<group>"; };
 		FC142D4825F65A8D00D8765F /* StringToUnicode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringToUnicode.h; sourceTree = "<group>"; };
 		FC142D4925F65A8D00D8765F /* StringToUnicode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringToUnicode.m; sourceTree = "<group>"; };
+		FC5BD6A92638445D000DF0B6 /* UserContent.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = UserContent.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +332,7 @@
 		4AC3768925FF373F00026C69 /* WKWebVIew */ = {
 			isa = PBXGroup;
 			children = (
+				FC5BD6A92638445D000DF0B6 /* UserContent.js */,
 				4AE77FF626330619008810E5 /* index.html */,
 				4AC3768A25FF376500026C69 /* DLKWebViewVC.h */,
 				4AC3768B25FF376500026C69 /* DLKWebViewVC.m */,
@@ -498,6 +501,7 @@
 				4A64C23C257E5FE400C4C5F5 /* Main.storyboard in Resources */,
 				4A7CCE95259228C900324B41 /* menu_1@2x.png in Resources */,
 				4A7CCE9A259228C900324B41 /* menu_2_sel@2x.png in Resources */,
+				FC5BD6AA2638445D000DF0B6 /* UserContent.js in Resources */,
 				4A7CCE93259228C900324B41 /* menu_0_sel@3x.png in Resources */,
 				4A7CCE91259228C900324B41 /* menu_0@3x.png in Resources */,
 			);

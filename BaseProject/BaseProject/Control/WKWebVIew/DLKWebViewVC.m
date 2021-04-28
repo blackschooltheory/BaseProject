@@ -28,6 +28,7 @@
 }
 -(void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     NSLog(@"message");
+    
 }
 @end
 
@@ -87,9 +88,14 @@
         WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc]init];
         WKUserContentController *userContent = [[WKUserContentController alloc]init];
         [userContent addScriptMessageHandler:handel name:@"showJSToOC"];
+        NSString *scriptPatch = [[NSBundle mainBundle] pathForResource:@"UserContent" ofType:@"js"];
+        NSString *scriptStr = [NSString stringWithContentsOfFile:scriptPatch encoding:NSUTF8StringEncoding error:nil];
+        
+        WKUserScript *userScript = [[WKUserScript alloc]initWithSource:scriptStr injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
+        
+        [userContent addUserScript:userScript];
+        
         configuration.userContentController =userContent;
-        
-        
         
         _wkWebView = [[WKWebView alloc]initWithFrame:self.view.frame configuration:configuration];
         _wkWebView.UIDelegate = self;
