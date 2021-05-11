@@ -62,6 +62,9 @@
 		FC142D4A25F65A8D00D8765F /* StringToUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = FC142D4925F65A8D00D8765F /* StringToUnicode.m */; };
 		FC5BD6AA2638445D000DF0B6 /* UserContent.js in Resources */ = {isa = PBXBuildFile; fileRef = FC5BD6A92638445D000DF0B6 /* UserContent.js */; };
 		FC70CAB22645662D002ED5A8 /* PrivacyPolicyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC70CAB12645662D002ED5A8 /* PrivacyPolicyVC.m */; };
+		FCCC4CDD264AAA7600C0C554 /* UITableView+StabceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCC4CDC264AAA7600C0C554 /* UITableView+StabceImage.m */; };
+		FCCC4CE2264AB4BC00C0C554 /* OneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCC4CE1264AB4BC00C0C554 /* OneModel.m */; };
+		FCCC4CE6264AB4F900C0C554 /* TwoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCC4CE5264AB4F900C0C554 /* TwoModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -159,6 +162,12 @@
 		FC5BD6A92638445D000DF0B6 /* UserContent.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = UserContent.js; sourceTree = "<group>"; };
 		FC70CAB02645662D002ED5A8 /* PrivacyPolicyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyVC.h; sourceTree = "<group>"; };
 		FC70CAB12645662D002ED5A8 /* PrivacyPolicyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyVC.m; sourceTree = "<group>"; };
+		FCCC4CDB264AAA7500C0C554 /* UITableView+StabceImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+StabceImage.h"; sourceTree = "<group>"; };
+		FCCC4CDC264AAA7600C0C554 /* UITableView+StabceImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+StabceImage.m"; sourceTree = "<group>"; };
+		FCCC4CE0264AB4BC00C0C554 /* OneModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneModel.h; sourceTree = "<group>"; };
+		FCCC4CE1264AB4BC00C0C554 /* OneModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneModel.m; sourceTree = "<group>"; };
+		FCCC4CE4264AB4F900C0C554 /* TwoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoModel.h; sourceTree = "<group>"; };
+		FCCC4CE5264AB4F900C0C554 /* TwoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +199,10 @@
 				4A294DAA262E7F420038B11B /* TwoVC.m */,
 				4A294DAD262E7F630038B11B /* ThreeVC.h */,
 				4A294DAE262E7F630038B11B /* ThreeVC.m */,
+				FCCC4CE0264AB4BC00C0C554 /* OneModel.h */,
+				FCCC4CE1264AB4BC00C0C554 /* OneModel.m */,
+				FCCC4CE4264AB4F900C0C554 /* TwoModel.h */,
+				FCCC4CE5264AB4F900C0C554 /* TwoModel.m */,
 			);
 			path = addMoreController;
 			sourceTree = "<group>";
@@ -222,6 +235,7 @@
 		4A64C230257E5FE400C4C5F5 /* BaseProject */ = {
 			isa = PBXGroup;
 			children = (
+				FCCC4CD5264AA91400C0C554 /* Catgory */,
 				4AD6C1B225E0B8B60048A9CC /* Base */,
 				4A7CCE77259225CF00324B41 /* Control */,
 				4A7CCD0C258E261B00324B41 /* image */,
@@ -456,6 +470,15 @@
 			path = PrivacyPolicy;
 			sourceTree = "<group>";
 		};
+		FCCC4CD5264AA91400C0C554 /* Catgory */ = {
+			isa = PBXGroup;
+			children = (
+				FCCC4CDB264AAA7500C0C554 /* UITableView+StabceImage.h */,
+				FCCC4CDC264AAA7600C0C554 /* UITableView+StabceImage.m */,
+			);
+			path = Catgory;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -567,15 +590,18 @@
 				4ADE799C25BAC5A7004F0EBB /* DeviceOrientation.m in Sources */,
 				4AD6C1BC25E0DE3B0048A9CC /* ModelLanscapeLeftVC.m in Sources */,
 				4A14CC0625CB903F00D29412 /* ModelPresentVC.m in Sources */,
+				FCCC4CE6264AB4F900C0C554 /* TwoModel.m in Sources */,
 				4A7CCE7D259227E900324B41 /* FunctionVC.m in Sources */,
 				4A7CCD11258E2F3E00324B41 /* LaunchVC.m in Sources */,
 				FC0D5D75263998EF00509E71 /* RunTimeVC.m in Sources */,
 				4AEC21FD26083A6A0081867B /* MVP_View.m in Sources */,
 				4A7F3063261ED9C40055D9DE /* RunloopVC.m in Sources */,
+				FCCC4CE2264AB4BC00C0C554 /* OneModel.m in Sources */,
 				4A64C233257E5FE400C4C5F5 /* AppDelegate.m in Sources */,
 				4AC37703260201F800026C69 /* GCDVC.m in Sources */,
 				4A7CCE842592282500324B41 /* Performance.m in Sources */,
 				4A294DAF262E7F630038B11B /* ThreeVC.m in Sources */,
+				FCCC4CDD264AAA7600C0C554 /* UITableView+StabceImage.m in Sources */,
 				4AEFF727260D7FC9005771D0 /* ProjectResourceView.m in Sources */,
 				4A64C244257E5FE800C4C5F5 /* main.m in Sources */,
 			);

@@ -20,13 +20,13 @@ NSString *blockName ;
     }
     return self;
 }
-+(void)load{
-    //再要加载内存就会调用
-    NSLog(@"调用了load 方法");
-}
-+(void)initialize{
-    NSLog(@"调用了initialize方法");
-}
+//+(void)load{
+//    //再要加载内存就会调用
+//    NSLog(@"调用了load 方法");
+//}
+//+(void)initialize{
+//    NSLog(@"调用了initialize方法");
+//}
 -(void)creatBlock:(NSString * _Nonnull (^)(NSString * _Nonnull))bblock{
     NSString * goodGirle = @"好朋友";
    NSString *gggg =  bblock(goodGirle);

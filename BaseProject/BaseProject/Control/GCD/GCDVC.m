@@ -213,18 +213,17 @@
     return [super resolveInstanceMethod:sel];
 }
 
-
--(void)btnClick{
-//    ThreeVC *vc = [[ThreeVC alloc]init];
-//    vc.modalPresentationStyle =  0 ;
-//    [self presentViewController:vc animated:YES completion:nil];
-    
-    [self operaction1];
-    
-    [self performSelector:@selector(ggoooo)];
-    
-    
-}
+//- (void)btnClick{
+////    ThreeVC *vc = [[ThreeVC alloc]init];
+////    vc.modalPresentationStyle =  0 ;
+////    [self presentViewController:vc animated:YES completion:nil];
+//
+//    [self operaction1];
+//
+//    [self performSelector:@selector(ggoooo)];
+//
+//
+//}
 
 - (void) createOperation{
     //两种operation  invocation  blockOperation
@@ -749,7 +748,8 @@ static void ObserverCallback (CFRunLoopObserverRef observerRef , CFRunLoopActivi
         
     });
     
-    
+
+ 
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
