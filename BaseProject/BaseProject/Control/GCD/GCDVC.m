@@ -63,7 +63,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
    
-    
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationUserDidTakeScreenshotNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        UIAlertController *ac = [UIAlertController alertControllerWithTitle:nil message:@"当前界面涉及隐私内容，不允许截屏" preferredStyle:(UIAlertControllerStyleAlert)];
+        [ac addAction:[UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            [ac dismissViewControllerAnimated:YES completion:nil];
+        }]];
+        [self presentViewController:ac animated:YES completion:nil];
+    }];
     
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 50)];
     button.backgroundColor = [UIColor blueColor];
@@ -121,7 +127,7 @@
 //        }
 //    });
     
-    
+
 }
 
 -(void)ticket{
@@ -136,7 +142,6 @@
     }
     
 }
-
 
 -(void)sss{
 //    modelObjc *mm = [[modelObjc alloc]init];
@@ -200,7 +205,23 @@
     [queue waitUntilAllOperationsAreFinished];//阻塞当前线程，直到队列执行完成
     [queue addOperations:@[] waitUntilFinished:YES]; //waitUntilFinished 表示是否阻塞当前线程
     [queue cancelAllOperations];//取消所有的操作，不能重启；
+}
+
++(BOOL)resolveInstanceMethod:(SEL)sel{
+    NSLog(@"%@",NSStringFromSelector(sel));
     
+    return [super resolveInstanceMethod:sel];
+}
+
+
+-(void)btnClick{
+//    ThreeVC *vc = [[ThreeVC alloc]init];
+//    vc.modalPresentationStyle =  0 ;
+//    [self presentViewController:vc animated:YES completion:nil];
+    
+    [self operaction1];
+    
+    [self performSelector:@selector(ggoooo)];
     
     
 }
