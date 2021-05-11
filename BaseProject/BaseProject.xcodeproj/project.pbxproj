@@ -58,8 +58,10 @@
 		4AEFF71F260D7EA4005771D0 /* ProjectResourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFF71E260D7EA4005771D0 /* ProjectResourceModel.m */; };
 		4AEFF723260D7ED8005771D0 /* ProjectResourceViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFF722260D7ED8005771D0 /* ProjectResourceViewModel.m */; };
 		4AEFF727260D7FC9005771D0 /* ProjectResourceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFF726260D7FC9005771D0 /* ProjectResourceView.m */; };
+		FC0D5D75263998EF00509E71 /* RunTimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0D5D74263998EF00509E71 /* RunTimeVC.m */; };
 		FC142D4A25F65A8D00D8765F /* StringToUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = FC142D4925F65A8D00D8765F /* StringToUnicode.m */; };
 		FC5BD6AA2638445D000DF0B6 /* UserContent.js in Resources */ = {isa = PBXBuildFile; fileRef = FC5BD6A92638445D000DF0B6 /* UserContent.js */; };
+		FC70CAB22645662D002ED5A8 /* PrivacyPolicyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC70CAB12645662D002ED5A8 /* PrivacyPolicyVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,9 +152,13 @@
 		4AEFF722260D7ED8005771D0 /* ProjectResourceViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectResourceViewModel.m; sourceTree = "<group>"; };
 		4AEFF725260D7FC9005771D0 /* ProjectResourceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectResourceView.h; sourceTree = "<group>"; };
 		4AEFF726260D7FC9005771D0 /* ProjectResourceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectResourceView.m; sourceTree = "<group>"; };
+		FC0D5D73263998EF00509E71 /* RunTimeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunTimeVC.h; sourceTree = "<group>"; };
+		FC0D5D74263998EF00509E71 /* RunTimeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunTimeVC.m; sourceTree = "<group>"; };
 		FC142D4825F65A8D00D8765F /* StringToUnicode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringToUnicode.h; sourceTree = "<group>"; };
 		FC142D4925F65A8D00D8765F /* StringToUnicode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringToUnicode.m; sourceTree = "<group>"; };
 		FC5BD6A92638445D000DF0B6 /* UserContent.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = UserContent.js; sourceTree = "<group>"; };
+		FC70CAB02645662D002ED5A8 /* PrivacyPolicyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyVC.h; sourceTree = "<group>"; };
+		FC70CAB12645662D002ED5A8 /* PrivacyPolicyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +264,8 @@
 		4A7CCE77259225CF00324B41 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				FC70CAAF264565FB002ED5A8 /* PrivacyPolicy */,
+				FC0D5D72263998C200509E71 /* RunTime */,
 				4A294DA3262E7EF70038B11B /* addMoreController */,
 				4A7F3060261ED9AE0055D9DE /* RunLoop */,
 				4A98CC222610A32D0047EB7F /* Block */,
@@ -419,6 +427,15 @@
 			path = StorageCacheFile;
 			sourceTree = "<group>";
 		};
+		FC0D5D72263998C200509E71 /* RunTime */ = {
+			isa = PBXGroup;
+			children = (
+				FC0D5D73263998EF00509E71 /* RunTimeVC.h */,
+				FC0D5D74263998EF00509E71 /* RunTimeVC.m */,
+			);
+			path = RunTime;
+			sourceTree = "<group>";
+		};
 		FC142D4725F65A4100D8765F /* StringToUnicode */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +445,15 @@
 				4AC3768525FF09CA00026C69 /* StringChageType.m */,
 			);
 			path = StringToUnicode;
+			sourceTree = "<group>";
+		};
+		FC70CAAF264565FB002ED5A8 /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				FC70CAB02645662D002ED5A8 /* PrivacyPolicyVC.h */,
+				FC70CAB12645662D002ED5A8 /* PrivacyPolicyVC.m */,
+			);
+			path = PrivacyPolicy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,11 +563,13 @@
 				4AEC220126083A9A0081867B /* MVP_Presenter.m in Sources */,
 				4A941C252625393D007DD0E6 /* RunLoopFunctionVC.m in Sources */,
 				4A950ED325BE9D200046CD46 /* PublicMethodManager.m in Sources */,
+				FC70CAB22645662D002ED5A8 /* PrivacyPolicyVC.m in Sources */,
 				4ADE799C25BAC5A7004F0EBB /* DeviceOrientation.m in Sources */,
 				4AD6C1BC25E0DE3B0048A9CC /* ModelLanscapeLeftVC.m in Sources */,
 				4A14CC0625CB903F00D29412 /* ModelPresentVC.m in Sources */,
 				4A7CCE7D259227E900324B41 /* FunctionVC.m in Sources */,
 				4A7CCD11258E2F3E00324B41 /* LaunchVC.m in Sources */,
+				FC0D5D75263998EF00509E71 /* RunTimeVC.m in Sources */,
 				4AEC21FD26083A6A0081867B /* MVP_View.m in Sources */,
 				4A7F3063261ED9C40055D9DE /* RunloopVC.m in Sources */,
 				4A64C233257E5FE400C4C5F5 /* AppDelegate.m in Sources */,

@@ -12,6 +12,7 @@
 #define WebViewDefault 1 // 标准化的 Wkwebview 加载 html方法与方法回调
 #define WebViewInject 1 //注入的方式 WKWebView 处理HTML  (不用修改js 代码可以实现JS与OC交互，实现UIWebView 转换到WKWebView)
 
+//实现JS与OC的通信 需要继承WKScriptMessageHandler 并实现方法（可以规避直接使用self内存泄露）
 @interface dlkScriptMessageHandel: NSObject<WKScriptMessageHandler>
 @property (nonatomic,weak)id<WKScriptMessageHandler> dlkScriptMessage;
 
@@ -88,6 +89,8 @@
         WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc]init];
         WKUserContentController *userContent = [[WKUserContentController alloc]init];
         [userContent addScriptMessageHandler:handel name:@"showJSToOC"];
+        
+        //实现注入js 让JS或者原生调用；也可以统一修改html 的样式
         NSString *scriptPatch = [[NSBundle mainBundle] pathForResource:@"UserContent" ofType:@"js"];
         NSString *scriptStr = [NSString stringWithContentsOfFile:scriptPatch encoding:NSUTF8StringEncoding error:nil];
         

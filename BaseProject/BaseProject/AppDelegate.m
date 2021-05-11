@@ -20,6 +20,7 @@
 
 @end
 
+static NSString  const * PrivacyPolicy = @"PrivacyPolicy";
 @implementation AppDelegate
 #pragma mark----横屏竖屏设置  设置强制转屏
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(nullable UIWindow *)window{
@@ -61,6 +62,23 @@
     
     return YES;
 }
+
+#pragma mark------隐私政策提示
+-(void)privacyPolicy{
+    
+    
+    NSUserDefaults *defalts = [NSUserDefaults  standardUserDefaults];
+    BOOL isShowPrivacyPolicy =  [defalts boolForKey:PrivacyPolicy];
+    if (!isShowPrivacyPolicy) {
+        //弹出隐私政策
+        
+        
+    }
+    
+}
+
+
+
 #pragma mark-------截取启动页的图片
 -(void)adViewLaunch{
     UIImageView *adImageView = [[UIImageView alloc]initWithFrame:self.window.frame];
