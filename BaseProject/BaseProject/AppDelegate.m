@@ -11,6 +11,7 @@
 #import "FunctionVC.h"
 #import "FrameworkVC.h"
 #import "Performance.h"
+#import "Carsh.h"
 
 @interface AppDelegate ()
 @property (assign, nonatomic) UIBackgroundTaskIdentifier backgroundId;
@@ -34,6 +35,8 @@ static NSString  const * PrivacyPolicy = @"PrivacyPolicy";
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //需要设置 NSSetUncaughtExceptionHandler 来抓取崩溃信息
+    NSSetUncaughtExceptionHandler(&caughtExceptionHandler);
     
     //设置tabbar 菜单栏 与首页3个页面
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];

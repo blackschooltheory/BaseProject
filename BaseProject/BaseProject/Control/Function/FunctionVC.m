@@ -18,6 +18,7 @@
 #import "RunloopVC.h"
 #import "RunLoopFunctionVC.h"
 #import "DLKWebViewVC.h"
+#import "TwoVC.h"
 @interface FunctionVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSArray * dataArry;
@@ -85,9 +86,19 @@
     }
     if (indexPath.row==3) {
         //系统日历写入事件
-        CalendarsNotifVC *vc = [[CalendarsNotifVC alloc]init];
-        vc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:vc animated:YES];
+//        CalendarsNotifVC *vc = [[CalendarsNotifVC alloc]init];
+//        vc.hidesBottomBarWhenPushed = YES;
+//        [self.navigationController pushViewController:vc animated:YES];
+        
+//        NSString *sss = [self versionFill:@"1.1.9"];
+//        NSString *aaa = [self versionFill:@"1.1.10"];
+//
+//        NSLog(@"234");
+        NSArray *arr = @[@"1",@"2",@"3"];
+        NSLog(@"%@",arr[6]);
+        
+        
+        
     }
     if (indexPath.row == 4) {
         //字符串转换数字
@@ -103,6 +114,7 @@
     if (indexPath.row == 6) {
         GCDVC *vc = [[GCDVC alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
         [self.navigationController pushViewController:vc animated:YES];
     }
     if (indexPath.row == 7) {
@@ -126,6 +138,24 @@
     }
 }
 
+//版本号补位，如3.0.1，补位后为030001
+-(NSString *)versionFill:(NSString *)version
+{
+    NSArray * arr = [version componentsSeparatedByString:@"."];
+    NSString *newVersion = @"";
+    for (int i = 0; i < [arr count]; i++) {
+        NSString *temp = arr[i];
+        NSInteger length = 2 - [arr[i] length];
+        
+        for (NSInteger j = 0; j < length; j++) {
+            temp = [NSString stringWithFormat:@"0%@",temp];
+        }
+        
+        newVersion = [NSString stringWithFormat:@"%@%@",newVersion,temp];
+    }
+    return newVersion;
+    
+}
 //将字符装换为数字
 -(NSString *)strEncryption:(NSString *)encryptionStr{
     NSMutableArray *arrys = [[NSMutableArray alloc]init];

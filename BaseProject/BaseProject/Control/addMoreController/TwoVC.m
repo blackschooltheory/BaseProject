@@ -23,7 +23,7 @@ static NSString * const TwoTiltleStr = @"hhhhhh";
     
     NSLog(TwoTiltleStr);
     
-    
+    self.view.backgroundColor = [UIColor blueColor];
     void (^gggg)(void) = ^(void){
         NSLog(@"数据");
     };

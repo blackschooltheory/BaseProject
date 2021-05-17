@@ -40,6 +40,7 @@
 		4A950ED325BE9D200046CD46 /* PublicMethodManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A950ED225BE9D200046CD46 /* PublicMethodManager.m */; };
 		4A98CC252610A3440047EB7F /* BlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A98CC242610A3440047EB7F /* BlockVC.m */; };
 		4A98CC2A2610B8E70047EB7F /* BlockMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A98CC292610B8E70047EB7F /* BlockMode.m */; };
+		4A9D4F6A2652130F00F9A944 /* Carsh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D4F692652130F00F9A944 /* Carsh.m */; };
 		4AC3768625FF09CA00026C69 /* StringChageType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3768525FF09CA00026C69 /* StringChageType.m */; };
 		4AC3768C25FF376500026C69 /* DLKWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3768B25FF376500026C69 /* DLKWebViewVC.m */; };
 		4AC37703260201F800026C69 /* GCDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC37702260201F800026C69 /* GCDVC.m */; };
@@ -120,6 +121,8 @@
 		4A98CC242610A3440047EB7F /* BlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockVC.m; sourceTree = "<group>"; };
 		4A98CC282610B8E70047EB7F /* BlockMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockMode.h; sourceTree = "<group>"; };
 		4A98CC292610B8E70047EB7F /* BlockMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockMode.m; sourceTree = "<group>"; };
+		4A9D4F682652130F00F9A944 /* Carsh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Carsh.h; sourceTree = "<group>"; };
+		4A9D4F692652130F00F9A944 /* Carsh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Carsh.m; sourceTree = "<group>"; };
 		4AC3768425FF09CA00026C69 /* StringChageType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringChageType.h; sourceTree = "<group>"; };
 		4AC3768525FF09CA00026C69 /* StringChageType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringChageType.m; sourceTree = "<group>"; };
 		4AC3768A25FF376500026C69 /* DLKWebViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLKWebViewVC.h; sourceTree = "<group>"; };
@@ -278,6 +281,7 @@
 		4A7CCE77259225CF00324B41 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				4A9D4F612652103A00F9A944 /* Carsh */,
 				FC70CAAF264565FB002ED5A8 /* PrivacyPolicy */,
 				FC0D5D72263998C200509E71 /* RunTime */,
 				4A294DA3262E7EF70038B11B /* addMoreController */,
@@ -349,6 +353,15 @@
 				4A98CC292610B8E70047EB7F /* BlockMode.m */,
 			);
 			path = Block;
+			sourceTree = "<group>";
+		};
+		4A9D4F612652103A00F9A944 /* Carsh */ = {
+			isa = PBXGroup;
+			children = (
+				4A9D4F682652130F00F9A944 /* Carsh.h */,
+				4A9D4F692652130F00F9A944 /* Carsh.m */,
+			);
+			path = Carsh;
 			sourceTree = "<group>";
 		};
 		4AC3768925FF373F00026C69 /* WKWebVIew */ = {
@@ -566,6 +579,7 @@
 				4AC3768C25FF376500026C69 /* DLKWebViewVC.m in Sources */,
 				4A98CC252610A3440047EB7F /* BlockVC.m in Sources */,
 				4AEC21F926083A560081867B /* MVP_Model.m in Sources */,
+				4A9D4F6A2652130F00F9A944 /* Carsh.m in Sources */,
 				4A294DAB262E7F420038B11B /* TwoVC.m in Sources */,
 				4A64C239257E5FE400C4C5F5 /* ViewController.m in Sources */,
 				4A7F3068261EDB9C0055D9DE /* TableRunLoopCell.m in Sources */,

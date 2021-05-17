@@ -25,6 +25,18 @@
     [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 }
+
+// imp 即 implementation ，表示由编译器生成的、指向实现方法的指针
+
+// C 语言的函数 若 class_addMethod() 方法中 IMP 是直接写了 （IMP）cFun 方式且参数类型的值为“@@:@” 的样式 需要用下面的方式来接
+NSString * cFunc (id self , SEL _cmd ,NSString *params) {
+    return @"cFun";
+}
+void startEngine(id self, SEL _cmd, NSString *brand) {
+NSLog(@"my %@ car starts the engine", brand);
+}
+
+
 -(void)click{
 //给当前的对象执行一个不存在的函数（方法动态解析）
   NSString   *sss =   [self performSelector:@selector(good) withObject:@"1234"];
@@ -125,6 +137,16 @@
         //消息接收者重定向与消息重定向有什么区别；消息重定向可以给多个对象发送消息
     }
 }
+
+
+static NSString * const prive_Per = @"goo";
+
+-(void)assicotion{
+    objc_setAssociatedObject(self, &prive_Per, @"tinti", OBJC_ASSOCIATION_COPY);
+    
+}
+
+
 /*
 #pragma mark - Navigation
 

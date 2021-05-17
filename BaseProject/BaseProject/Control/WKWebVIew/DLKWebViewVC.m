@@ -103,6 +103,7 @@
         _wkWebView = [[WKWebView alloc]initWithFrame:self.view.frame configuration:configuration];
         _wkWebView.UIDelegate = self;
         _wkWebView.navigationDelegate = self;
+//        _wkWebView.scrollView.scrollEnabled=NO;
     }
     return _wkWebView;
 }

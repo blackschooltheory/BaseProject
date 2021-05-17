@@ -12,6 +12,7 @@
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 #import <objc/message.h>
+#import "TwoVC.h"
 
 
 @interface modelObjc : NSObject
@@ -96,8 +97,13 @@
 //    });
     
 //    [self  sss];
-    NSLog(@"%i",_num);
-    [self safety];
+//    NSLog(@"%i",_num);
+//    [self safety];
+    TwoVC *vc = [[TwoVC alloc]init];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
+    
 }
 -(void)safety{
     _num =1;
