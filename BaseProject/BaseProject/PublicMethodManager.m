@@ -29,5 +29,33 @@
     }
     return iPhoneX;
 }
-
+#pragma mark-------获取当前显示的VC
++(UIViewController *)currentVC{
+    
+    UIViewController * mainVc = [[UIApplication sharedApplication].delegate.window rootViewController];
+    if ([mainVc isKindOfClass:[UITabBarController class]]) {
+        UITabBarController * tabVc = (UITabBarController *)mainVc;
+        
+        UIViewController *vc = [tabVc selectedViewController];
+        while ([vc presentedViewController]) {
+            vc = vc.presentedViewController;
+        }
+        return vc;
+    }else if ([mainVc isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navVC = (UINavigationController *)mainVc;
+        UIViewController *vc = [navVC topViewController];
+        while (vc.presentedViewController) {
+            vc = vc.presentedViewController;
+        }
+        return vc;
+    }else{
+        while ([mainVc presentedViewController]) {
+            mainVc = mainVc.presentedViewController;
+        }
+        return mainVc;
+    }
+    
+    
+    
+}
 @end

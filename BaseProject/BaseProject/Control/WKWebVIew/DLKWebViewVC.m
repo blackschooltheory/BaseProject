@@ -55,20 +55,27 @@
     
     NSString *urlHtml = [[NSString alloc]initWithContentsOfFile:indexPatch encoding:NSUTF8StringEncoding error:nil];
     
+    /*
+     WKWebView 加载的HTML的三种方式
+     loadFileURL:
+     loadRequest:
+     loadHTMLString:
+     */
 //    [_wkWebView loadFileURL:[NSURL fileURLWithPath:indexPatch] allowingReadAccessToURL:[NSURL fileURLWithPath:indexPatch]] ;
 
 //    allowingReadAccessToURL  这个入参必须是一个正常的url 路径
     
-    
 //    [_wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:indexPatch]]];
     
-    [self.wkWebView loadHTMLString:urlHtml baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+//    [self.wkWebView loadHTMLString:urlHtml baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
 
+    //加载 svg 的方式
+    NSString *svgPatch = [[NSBundle mainBundle]pathForResource:@"gdicon.svg" ofType:nil];
     
-//    _wkWebView.allowsBackForwardNavigationGestures=YES;
-//    WKBackForwardList * backForwardList = [_wkWebView backForwardList];
-//
-//    [_wkWebView setValue:backForwardList forKey:@"backForwardList"];
+    NSData *svgData = [NSData dataWithContentsOfFile:svgPatch];
+    NSString *reasourcePath = [[NSBundle mainBundle] resourcePath];
+        NSURL *baseUrl = [[NSURL alloc] initFileURLWithPath:reasourcePath isDirectory:true];
+    [self.wkWebView loadData:svgData MIMEType:@"image/svg+xml" characterEncodingName:@"UIF-8" baseURL:baseUrl];
 //
     
     

@@ -9,9 +9,11 @@
 #import "Performance.h"
 #import <objc/runtime.h>
 #import "GCDVC.h"
+#import "CompareFloat.h"
+#import "AddChildVC.h"
 
 @interface Performance ()
-
+@property(nonatomic,assign)NSInteger index;
 @end
 
 @implementation Performance
@@ -39,9 +41,56 @@ NSLog(@"my %@ car starts the engine", brand);
 
 -(void)click{
 //给当前的对象执行一个不存在的函数（方法动态解析）
-  NSString   *sss =   [self performSelector:@selector(good) withObject:@"1234"];
-    NSLog(@"%@",sss);
+//  NSString   *sss =   [self performSelector:@selector(good) withObject:@"1234"];
+//    NSLog(@"%@",sss);
+    
+    //比较a,b字符串的大小
+//    compareStatus type = [CompareFloat compareA:@"1000.01" withB:@"1000.01"];
+    
+//    NSString *str1 = @"1000.023";
+//    NSString *str2 = @"1000.066";
+//
+//    float a = [str1 floatValue];
+//    float b = [str2 floatValue];
+//    float c = a+b ;
+//    NSLog(@"float===%f",c);
+//
+//    NSDecimalNumber *decimalNum = [CompareFloat compareA:@"1000.023" addB:@"1000.066"];
+//
+//    NSLog(@"123");
+    
+    
+    //创建alert
+    _index = 0;
+    
+//    [self createAlert];
+//    [self createAlert];
+//    [self createAlert];
+//    [self createAlert];
+    
+//    [self performSelector:@selector(createAlert) withObject:nil afterDelay:0.5];
+//    [self performSelector:@selector(createAlert) withObject:nil afterDelay:2];
+//    [self performSelector:@selector(createAlert) withObject:nil afterDelay:3];
+//    [self performSelector:@selector(createAlert) withObject:nil afterDelay:6];
+    
+    AddChildVC * vc = [AddChildVC new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
+
+-(void)createAlert{
+    
+    _index ++;
+    NSString *str = [NSString stringWithFormat:@"测试%i",_index];
+    UIAlertController * alertCon = [UIAlertController alertControllerWithTitle:str message:@"测试弹出" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    [alertCon addAction:alertAction];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[PublicMethodManager currentVC] presentViewController:alertCon animated:YES completion:nil];
+    });
+  
+}
+
 
 -(NSString *)goodFun:(NSString *)str{
     NSLog(@"调用动态方法解析good方法");

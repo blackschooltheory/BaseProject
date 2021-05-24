@@ -11,6 +11,9 @@
 		4A294DA6262E7F350038B11B /* OneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A294DA5262E7F350038B11B /* OneVC.m */; };
 		4A294DAB262E7F420038B11B /* TwoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A294DAA262E7F420038B11B /* TwoVC.m */; };
 		4A294DAF262E7F630038B11B /* ThreeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A294DAE262E7F630038B11B /* ThreeVC.m */; };
+		4A480A9E26565BB3003E13AF /* CompareFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A480A9D26565BB3003E13AF /* CompareFloat.m */; };
+		4A480AA82657885F003E13AF /* MoreAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A480AA72657885F003E13AF /* MoreAlertVC.m */; };
+		4A480AAD265789EA003E13AF /* MoreAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A480AAC265789EA003E13AF /* MoreAlertController.m */; };
 		4A54BCD325C3E8C4000BA17B /* ForbidCatchScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A54BCD225C3E8C4000BA17B /* ForbidCatchScreenVC.m */; };
 		4A64C233257E5FE400C4C5F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A64C232257E5FE400C4C5F5 /* AppDelegate.m */; };
 		4A64C239257E5FE400C4C5F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A64C238257E5FE400C4C5F5 /* ViewController.m */; };
@@ -36,8 +39,12 @@
 		4A7CCE9C259228C900324B41 /* menu_2_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7CCE90259228C900324B41 /* menu_2_sel@3x.png */; };
 		4A7F3063261ED9C40055D9DE /* RunloopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7F3062261ED9C40055D9DE /* RunloopVC.m */; };
 		4A7F3068261EDB9C0055D9DE /* TableRunLoopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7F3067261EDB9C0055D9DE /* TableRunLoopCell.m */; };
+		4A862B4A265A824E003096D6 /* Child_TwoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A862B49265A824E003096D6 /* Child_TwoVC.m */; };
 		4A941C252625393D007DD0E6 /* RunLoopFunctionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A941C242625393D007DD0E6 /* RunLoopFunctionVC.m */; };
 		4A950ED325BE9D200046CD46 /* PublicMethodManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A950ED225BE9D200046CD46 /* PublicMethodManager.m */; };
+		4A95B5982658FEBC00B7C001 /* gdicon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4A95B5972658FEBC00B7C001 /* gdicon.svg */; };
+		4A95B59C265A0C5100B7C001 /* AddChildVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A95B59B265A0C5100B7C001 /* AddChildVC.m */; };
+		4A95B5A1265A0E7D00B7C001 /* Child_OneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A95B5A0265A0E7D00B7C001 /* Child_OneVC.m */; };
 		4A98CC252610A3440047EB7F /* BlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A98CC242610A3440047EB7F /* BlockVC.m */; };
 		4A98CC2A2610B8E70047EB7F /* BlockMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A98CC292610B8E70047EB7F /* BlockMode.m */; };
 		4A9D4F6A2652130F00F9A944 /* Carsh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D4F692652130F00F9A944 /* Carsh.m */; };
@@ -77,6 +84,12 @@
 		4A294DAA262E7F420038B11B /* TwoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoVC.m; sourceTree = "<group>"; };
 		4A294DAD262E7F630038B11B /* ThreeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeVC.h; sourceTree = "<group>"; };
 		4A294DAE262E7F630038B11B /* ThreeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeVC.m; sourceTree = "<group>"; };
+		4A480A9C26565BB3003E13AF /* CompareFloat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompareFloat.h; sourceTree = "<group>"; };
+		4A480A9D26565BB3003E13AF /* CompareFloat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompareFloat.m; sourceTree = "<group>"; };
+		4A480AA62657885F003E13AF /* MoreAlertVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreAlertVC.h; sourceTree = "<group>"; };
+		4A480AA72657885F003E13AF /* MoreAlertVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreAlertVC.m; sourceTree = "<group>"; };
+		4A480AAB265789EA003E13AF /* MoreAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreAlertController.h; sourceTree = "<group>"; };
+		4A480AAC265789EA003E13AF /* MoreAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreAlertController.m; sourceTree = "<group>"; };
 		4A54BCD125C3E8C4000BA17B /* ForbidCatchScreenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForbidCatchScreenVC.h; sourceTree = "<group>"; };
 		4A54BCD225C3E8C4000BA17B /* ForbidCatchScreenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForbidCatchScreenVC.m; sourceTree = "<group>"; };
 		4A64C22E257E5FE400C4C5F5 /* BaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,10 +126,17 @@
 		4A7F3062261ED9C40055D9DE /* RunloopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunloopVC.m; sourceTree = "<group>"; };
 		4A7F3066261EDB9C0055D9DE /* TableRunLoopCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableRunLoopCell.h; sourceTree = "<group>"; };
 		4A7F3067261EDB9C0055D9DE /* TableRunLoopCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableRunLoopCell.m; sourceTree = "<group>"; };
+		4A862B48265A824E003096D6 /* Child_TwoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Child_TwoVC.h; sourceTree = "<group>"; };
+		4A862B49265A824E003096D6 /* Child_TwoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Child_TwoVC.m; sourceTree = "<group>"; };
 		4A941C232625393D007DD0E6 /* RunLoopFunctionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopFunctionVC.h; sourceTree = "<group>"; };
 		4A941C242625393D007DD0E6 /* RunLoopFunctionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopFunctionVC.m; sourceTree = "<group>"; };
 		4A950ED125BE9D200046CD46 /* PublicMethodManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicMethodManager.h; sourceTree = "<group>"; };
 		4A950ED225BE9D200046CD46 /* PublicMethodManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicMethodManager.m; sourceTree = "<group>"; };
+		4A95B5972658FEBC00B7C001 /* gdicon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gdicon.svg; sourceTree = "<group>"; };
+		4A95B59A265A0C5100B7C001 /* AddChildVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddChildVC.h; sourceTree = "<group>"; };
+		4A95B59B265A0C5100B7C001 /* AddChildVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddChildVC.m; sourceTree = "<group>"; };
+		4A95B59F265A0E7D00B7C001 /* Child_OneVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Child_OneVC.h; sourceTree = "<group>"; };
+		4A95B5A0265A0E7D00B7C001 /* Child_OneVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Child_OneVC.m; sourceTree = "<group>"; };
 		4A98CC232610A3440047EB7F /* BlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockVC.h; sourceTree = "<group>"; };
 		4A98CC242610A3440047EB7F /* BlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockVC.m; sourceTree = "<group>"; };
 		4A98CC282610B8E70047EB7F /* BlockMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockMode.h; sourceTree = "<group>"; };
@@ -210,6 +230,17 @@
 			path = addMoreController;
 			sourceTree = "<group>";
 		};
+		4A480AA5265787C1003E13AF /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				4A480AA62657885F003E13AF /* MoreAlertVC.h */,
+				4A480AA72657885F003E13AF /* MoreAlertVC.m */,
+				4A480AAB265789EA003E13AF /* MoreAlertController.h */,
+				4A480AAC265789EA003E13AF /* MoreAlertController.m */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		4A54BCD025C3E7F9000BA17B /* ForbidCatchScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +248,15 @@
 				4A54BCD225C3E8C4000BA17B /* ForbidCatchScreenVC.m */,
 			);
 			path = ForbidCatchScreen;
+			sourceTree = "<group>";
+		};
+		4A60067E26564EC900501AF3 /* CompareFloat */ = {
+			isa = PBXGroup;
+			children = (
+				4A480A9C26565BB3003E13AF /* CompareFloat.h */,
+				4A480A9D26565BB3003E13AF /* CompareFloat.m */,
+			);
+			path = CompareFloat;
 			sourceTree = "<group>";
 		};
 		4A64C225257E5FE400C4C5F5 = {
@@ -281,6 +321,9 @@
 		4A7CCE77259225CF00324B41 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				4A95B59E265A0C5B00B7C001 /* AddChild */,
+				4A480AA5265787C1003E13AF /* Alert */,
+				4A60067E26564EC900501AF3 /* CompareFloat */,
 				4A9D4F612652103A00F9A944 /* Carsh */,
 				FC70CAAF264565FB002ED5A8 /* PrivacyPolicy */,
 				FC0D5D72263998C200509E71 /* RunTime */,
@@ -344,6 +387,19 @@
 			path = RunLoop;
 			sourceTree = "<group>";
 		};
+		4A95B59E265A0C5B00B7C001 /* AddChild */ = {
+			isa = PBXGroup;
+			children = (
+				4A95B59A265A0C5100B7C001 /* AddChildVC.h */,
+				4A95B59B265A0C5100B7C001 /* AddChildVC.m */,
+				4A95B59F265A0E7D00B7C001 /* Child_OneVC.h */,
+				4A95B5A0265A0E7D00B7C001 /* Child_OneVC.m */,
+				4A862B48265A824E003096D6 /* Child_TwoVC.h */,
+				4A862B49265A824E003096D6 /* Child_TwoVC.m */,
+			);
+			path = AddChild;
+			sourceTree = "<group>";
+		};
 		4A98CC222610A32D0047EB7F /* Block */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +423,7 @@
 		4AC3768925FF373F00026C69 /* WKWebVIew */ = {
 			isa = PBXGroup;
 			children = (
+				4A95B5972658FEBC00B7C001 /* gdicon.svg */,
 				FC5BD6A92638445D000DF0B6 /* UserContent.js */,
 				4AE77FF626330619008810E5 /* index.html */,
 				4AC3768A25FF376500026C69 /* DLKWebViewVC.h */,
@@ -553,6 +610,7 @@
 				4A64C241257E5FE800C4C5F5 /* LaunchScreen.storyboard in Resources */,
 				4A64C23E257E5FE800C4C5F5 /* Assets.xcassets in Resources */,
 				4A7CCE97259228C900324B41 /* menu_0@2x.png in Resources */,
+				4A95B5982658FEBC00B7C001 /* gdicon.svg in Resources */,
 				4A7CCE96259228C900324B41 /* menu_2@3x.png in Resources */,
 				4AE77FF726330619008810E5 /* index.html in Resources */,
 				4A7CCE99259228C900324B41 /* menu_1@3x.png in Resources */,
@@ -584,6 +642,7 @@
 				4A64C239257E5FE400C4C5F5 /* ViewController.m in Sources */,
 				4A7F3068261EDB9C0055D9DE /* TableRunLoopCell.m in Sources */,
 				4AE2C5C625BE5815003ED184 /* TransitionAnimate.m in Sources */,
+				4A480AA82657885F003E13AF /* MoreAlertVC.m in Sources */,
 				4AEFF723260D7ED8005771D0 /* ProjectResourceViewModel.m in Sources */,
 				4A98CC2A2610B8E70047EB7F /* BlockMode.m in Sources */,
 				4A54BCD325C3E8C4000BA17B /* ForbidCatchScreenVC.m in Sources */,
@@ -595,6 +654,7 @@
 				FC142D4A25F65A8D00D8765F /* StringToUnicode.m in Sources */,
 				4AC3768625FF09CA00026C69 /* StringChageType.m in Sources */,
 				4AD6C1B525E0B8F90048A9CC /* BaseViewController.m in Sources */,
+				4A480A9E26565BB3003E13AF /* CompareFloat.m in Sources */,
 				4A294DA6262E7F350038B11B /* OneVC.m in Sources */,
 				4AEFF71F260D7EA4005771D0 /* ProjectResourceModel.m in Sources */,
 				4AEC220126083A9A0081867B /* MVP_Presenter.m in Sources */,
@@ -605,6 +665,7 @@
 				4AD6C1BC25E0DE3B0048A9CC /* ModelLanscapeLeftVC.m in Sources */,
 				4A14CC0625CB903F00D29412 /* ModelPresentVC.m in Sources */,
 				FCCC4CE6264AB4F900C0C554 /* TwoModel.m in Sources */,
+				4A480AAD265789EA003E13AF /* MoreAlertController.m in Sources */,
 				4A7CCE7D259227E900324B41 /* FunctionVC.m in Sources */,
 				4A7CCD11258E2F3E00324B41 /* LaunchVC.m in Sources */,
 				FC0D5D75263998EF00509E71 /* RunTimeVC.m in Sources */,
@@ -612,11 +673,14 @@
 				4A7F3063261ED9C40055D9DE /* RunloopVC.m in Sources */,
 				FCCC4CE2264AB4BC00C0C554 /* OneModel.m in Sources */,
 				4A64C233257E5FE400C4C5F5 /* AppDelegate.m in Sources */,
+				4A95B59C265A0C5100B7C001 /* AddChildVC.m in Sources */,
 				4AC37703260201F800026C69 /* GCDVC.m in Sources */,
+				4A95B5A1265A0E7D00B7C001 /* Child_OneVC.m in Sources */,
 				4A7CCE842592282500324B41 /* Performance.m in Sources */,
 				4A294DAF262E7F630038B11B /* ThreeVC.m in Sources */,
 				FCCC4CDD264AAA7600C0C554 /* UITableView+StabceImage.m in Sources */,
 				4AEFF727260D7FC9005771D0 /* ProjectResourceView.m in Sources */,
+				4A862B4A265A824E003096D6 /* Child_TwoVC.m in Sources */,
 				4A64C244257E5FE800C4C5F5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
