@@ -7,6 +7,7 @@
 //
 
 #import "FrameworkVC.h"
+#import "TableStanceView.h"
 
 @interface FrameworkVC ()
 
@@ -25,6 +26,13 @@ static  const NSString * yye = @"tantiajn";
     // Do any additional setup after loading the view.
     
     yye =@"titnais";
+    
+    float x = [PublicMethodManager screenWith]/2.0 - 50;
+    float y = [PublicMethodManager screenHeight]/2.0 - 50;
+    
+    [self.view addSubview:[[TableStanceView alloc] initWithFrame:CGRectMake(x, y, 100, 100) withGif:@"load.gif"] ];
+    
+    
 }
 
 /*

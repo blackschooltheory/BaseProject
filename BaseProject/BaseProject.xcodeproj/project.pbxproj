@@ -73,6 +73,9 @@
 		FCCC4CDD264AAA7600C0C554 /* UITableView+StabceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCC4CDC264AAA7600C0C554 /* UITableView+StabceImage.m */; };
 		FCCC4CE2264AB4BC00C0C554 /* OneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCC4CE1264AB4BC00C0C554 /* OneModel.m */; };
 		FCCC4CE6264AB4F900C0C554 /* TwoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCC4CE5264AB4F900C0C554 /* TwoModel.m */; };
+		FCEA089E265BD79B000E238D /* TableStanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEA089D265BD79B000E238D /* TableStanceVC.m */; };
+		FCEA08A2265BD827000E238D /* TableStanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEA08A1265BD827000E238D /* TableStanceView.m */; };
+		FCEA08A5265BDA0E000E238D /* load.gif in Resources */ = {isa = PBXBuildFile; fileRef = FCEA08A4265BDA0E000E238D /* load.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -191,6 +194,11 @@
 		FCCC4CE1264AB4BC00C0C554 /* OneModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneModel.m; sourceTree = "<group>"; };
 		FCCC4CE4264AB4F900C0C554 /* TwoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoModel.h; sourceTree = "<group>"; };
 		FCCC4CE5264AB4F900C0C554 /* TwoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoModel.m; sourceTree = "<group>"; };
+		FCEA089C265BD79B000E238D /* TableStanceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableStanceVC.h; sourceTree = "<group>"; };
+		FCEA089D265BD79B000E238D /* TableStanceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableStanceVC.m; sourceTree = "<group>"; };
+		FCEA08A0265BD827000E238D /* TableStanceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableStanceView.h; sourceTree = "<group>"; };
+		FCEA08A1265BD827000E238D /* TableStanceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableStanceView.m; sourceTree = "<group>"; };
+		FCEA08A4265BDA0E000E238D /* load.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +286,7 @@
 		4A64C230257E5FE400C4C5F5 /* BaseProject */ = {
 			isa = PBXGroup;
 			children = (
+				FCEA089A265BD620000E238D /* TableStance */,
 				FCCC4CD5264AA91400C0C554 /* Catgory */,
 				4AD6C1B225E0B8B60048A9CC /* Base */,
 				4A7CCE77259225CF00324B41 /* Control */,
@@ -549,6 +558,18 @@
 			path = Catgory;
 			sourceTree = "<group>";
 		};
+		FCEA089A265BD620000E238D /* TableStance */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA08A4265BDA0E000E238D /* load.gif */,
+				FCEA089C265BD79B000E238D /* TableStanceVC.h */,
+				FCEA089D265BD79B000E238D /* TableStanceVC.m */,
+				FCEA08A0265BD827000E238D /* TableStanceView.h */,
+				FCEA08A1265BD827000E238D /* TableStanceView.m */,
+			);
+			path = TableStance;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -608,6 +629,7 @@
 			files = (
 				4A7CCE94259228C900324B41 /* menu_2@2x.png in Resources */,
 				4A64C241257E5FE800C4C5F5 /* LaunchScreen.storyboard in Resources */,
+				FCEA08A5265BDA0E000E238D /* load.gif in Resources */,
 				4A64C23E257E5FE800C4C5F5 /* Assets.xcassets in Resources */,
 				4A7CCE97259228C900324B41 /* menu_0@2x.png in Resources */,
 				4A95B5982658FEBC00B7C001 /* gdicon.svg in Resources */,
@@ -646,6 +668,7 @@
 				4AEFF723260D7ED8005771D0 /* ProjectResourceViewModel.m in Sources */,
 				4A98CC2A2610B8E70047EB7F /* BlockMode.m in Sources */,
 				4A54BCD325C3E8C4000BA17B /* ForbidCatchScreenVC.m in Sources */,
+				FCEA089E265BD79B000E238D /* TableStanceVC.m in Sources */,
 				4AD6C1C225E3DFEC0048A9CC /* CalendarsNotifVC.m in Sources */,
 				4A7CCE812592280D00324B41 /* FrameworkVC.m in Sources */,
 				4AEC21F526083A360081867B /* MVC_ViewController.m in Sources */,
@@ -672,6 +695,7 @@
 				4AEC21FD26083A6A0081867B /* MVP_View.m in Sources */,
 				4A7F3063261ED9C40055D9DE /* RunloopVC.m in Sources */,
 				FCCC4CE2264AB4BC00C0C554 /* OneModel.m in Sources */,
+				FCEA08A2265BD827000E238D /* TableStanceView.m in Sources */,
 				4A64C233257E5FE400C4C5F5 /* AppDelegate.m in Sources */,
 				4A95B59C265A0C5100B7C001 /* AddChildVC.m in Sources */,
 				4AC37703260201F800026C69 /* GCDVC.m in Sources */,
