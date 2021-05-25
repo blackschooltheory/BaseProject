@@ -11,6 +11,7 @@
 #import "GCDVC.h"
 #import "CompareFloat.h"
 #import "AddChildVC.h"
+#import "KVOModel.h"
 
 @interface Performance ()
 @property(nonatomic,assign)NSInteger index;
@@ -73,8 +74,31 @@ NSLog(@"my %@ car starts the engine", brand);
 //    [self performSelector:@selector(createAlert) withObject:nil afterDelay:3];
 //    [self performSelector:@selector(createAlert) withObject:nil afterDelay:6];
     
-    AddChildVC * vc = [AddChildVC new];
-    [self.navigationController pushViewController:vc animated:YES];
+//    AddChildVC * vc = [AddChildVC new];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    KVOModel *model = [[KVOModel alloc]init];
+
+    //监听 Model 对象的属性 name 的赋值，
+    [ model addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:(__bridge void * _Nullable)(@{@"obj":@"对象"})];
+    model.name = @"我的名字是ddd";
+    /*
+     移除观察
+     [self removeObserver:self forKeyPath:@“name"];
+     */
+    
+}
+
+#pragma  mark -------- KVO 监听事件执行方法
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    if ([keyPath isEqualToString:@"name"]) {
+        NSLog(@"change==%@",change);
+        NSString *name =(NSString *) change[@"new"];//赋值的新数据
+        
+        NSString *oldName =(NSString *) change[@"old"];//老数据
+        [PublicMethodManager alertTitle:name];
+        
+    }
 }
 
 -(void)createAlert{

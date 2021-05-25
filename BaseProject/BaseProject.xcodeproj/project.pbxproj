@@ -76,6 +76,7 @@
 		FCEA089E265BD79B000E238D /* TableStanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEA089D265BD79B000E238D /* TableStanceVC.m */; };
 		FCEA08A2265BD827000E238D /* TableStanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEA08A1265BD827000E238D /* TableStanceView.m */; };
 		FCEA08A5265BDA0E000E238D /* load.gif in Resources */ = {isa = PBXBuildFile; fileRef = FCEA08A4265BDA0E000E238D /* load.gif */; };
+		FCF4AFAC265D42830077B328 /* KVOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF4AFAB265D42830077B328 /* KVOModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -199,6 +200,8 @@
 		FCEA08A0265BD827000E238D /* TableStanceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableStanceView.h; sourceTree = "<group>"; };
 		FCEA08A1265BD827000E238D /* TableStanceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableStanceView.m; sourceTree = "<group>"; };
 		FCEA08A4265BDA0E000E238D /* load.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load.gif; sourceTree = "<group>"; };
+		FCF4AFAA265D42830077B328 /* KVOModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOModel.h; sourceTree = "<group>"; };
+		FCF4AFAB265D42830077B328 /* KVOModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +289,7 @@
 		4A64C230257E5FE400C4C5F5 /* BaseProject */ = {
 			isa = PBXGroup;
 			children = (
+				FCF4AFA9265D42630077B328 /* KVO */,
 				FCEA089A265BD620000E238D /* TableStance */,
 				FCCC4CD5264AA91400C0C554 /* Catgory */,
 				4AD6C1B225E0B8B60048A9CC /* Base */,
@@ -570,6 +574,15 @@
 			path = TableStance;
 			sourceTree = "<group>";
 		};
+		FCF4AFA9265D42630077B328 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				FCF4AFAA265D42830077B328 /* KVOModel.h */,
+				FCF4AFAB265D42830077B328 /* KVOModel.m */,
+			);
+			path = KVO;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -660,6 +673,7 @@
 				4A98CC252610A3440047EB7F /* BlockVC.m in Sources */,
 				4AEC21F926083A560081867B /* MVP_Model.m in Sources */,
 				4A9D4F6A2652130F00F9A944 /* Carsh.m in Sources */,
+				FCF4AFAC265D42830077B328 /* KVOModel.m in Sources */,
 				4A294DAB262E7F420038B11B /* TwoVC.m in Sources */,
 				4A64C239257E5FE400C4C5F5 /* ViewController.m in Sources */,
 				4A7F3068261EDB9C0055D9DE /* TableRunLoopCell.m in Sources */,

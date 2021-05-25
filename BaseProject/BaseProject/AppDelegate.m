@@ -63,9 +63,24 @@ static NSString  const * PrivacyPolicy = @"PrivacyPolicy";
 //    CGAffineTransformMakeRotation(M_PI_4);
 //    [self adViewLaunch];
     
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(handleDeviceOrientationChange:)
+                                         name:UIDeviceOrientationDidChangeNotification object:nil];
+
     return YES;
 }
 
+-(void)handleDeviceOrientationChange:(NSNotification *)notif{
+    UIDevice *device = notif.object ;
+    if (  device.orientation==UIDeviceOrientationLandscapeRight ) {
+        [PublicMethodManager alertTitle:@"屏幕旋转了"];
+    }
+    NSLog(@"deviceChage =%i",device.orientation);
+   
+  
+
+//
+}
 #pragma mark------隐私政策提示
 -(void)privacyPolicy{
     

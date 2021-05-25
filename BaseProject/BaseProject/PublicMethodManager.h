@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)isPhoneX;
 
 +(UIViewController *)currentVC;
++(void)alertTitle:(NSString *)title;
 @end
 
 NS_ASSUME_NONNULL_END

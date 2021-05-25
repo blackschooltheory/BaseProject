@@ -33,6 +33,9 @@
 +(UIViewController *)currentVC{
     
     UIViewController * mainVc = [[UIApplication sharedApplication].delegate.window rootViewController];
+    
+//UIViewController * mainVc = [[UIApplication sharedApplication].delegate.keywindow rootViewController];  keyWindow 也是可以的
+    
     if ([mainVc isKindOfClass:[UITabBarController class]]) {
         UITabBarController * tabVc = (UITabBarController *)mainVc;
         
@@ -54,8 +57,17 @@
         }
         return mainVc;
     }
-    
-    
-    
 }
+
++(void)alertTitle:(NSString *)title{
+    UIAlertController * alertCon = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+     
+    }];
+    [alertCon setValue:@[alertAction] forKey:@"actions"];
+    
+    [[PublicMethodManager currentVC] presentViewController:alertCon animated:YES completion:nil];
+}
+
+
 @end
