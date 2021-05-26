@@ -60,9 +60,16 @@
 }
 
 +(void)alertTitle:(NSString *)title{
+    
+    //同样的标题的 alert弹框不能弹出
+    if ([[PublicMethodManager currentVC] isKindOfClass:[UIAlertController class]]) {
+        UIAlertController *alertVC = (UIAlertController *)[PublicMethodManager currentVC] ;
+        if ([alertVC.title isEqualToString:title]) {
+            return;
+        }
+    }
     UIAlertController * alertCon = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-     
     }];
     [alertCon setValue:@[alertAction] forKey:@"actions"];
     

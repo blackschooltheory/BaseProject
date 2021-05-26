@@ -28,16 +28,12 @@
 }
 
 -(void)addGif:(NSString *)gifStr withFrame:(CGRect) frame{
-    
     _gifWebView = [[WKWebView alloc]initWithFrame:frame];
-    
+    _gifWebView.scrollView.scrollEnabled = NO;
     NSString *patch = [[NSBundle mainBundle]pathForResource:@"load.gif" ofType:@""];
     NSURL *url = [NSURL fileURLWithPath:patch];
     [_gifWebView loadFileURL:url allowingReadAccessToURL:url];
-    
     [self addSubview:_gifWebView];
-    
-    
 }
 
 /*

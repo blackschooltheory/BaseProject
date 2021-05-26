@@ -7,16 +7,71 @@
 //
 
 #import "TableStanceVC.h"
+#import "UITableView+StabceImage.h"
 
-@interface TableStanceVC ()
 
+@interface TableStanceVC ()<UITableViewDelegate,UITableViewDataSource>
+@property(nonatomic,strong)UITableView *tableView;
+@property(nonatomic,strong)NSMutableArray *dataArry;
 @end
 
 @implementation TableStanceVC
 
+-(UITableView *)tableView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, [PublicMethodManager screenWith], [PublicMethodManager screenHeight]) style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource =self;
+        _tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+    }
+    return _tableView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _dataArry = @[];
+    [self.view addSubview:self.tableView];
+    
+//    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+//    button.backgroundColor = [UIColor blueColor];
+//    [self.view addSubview:button];
+//    [button addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+//    [_tableView reloadData];
+    
+    [self performSelector:@selector(time3) withObject:nil afterDelay:3];
+    
+    
+}
+-(void)time3{
+    _dataArry = @[@"1",@"2",@"3"];
+       [_tableView reloadData];
+}
+//-(void)btnClick{
+//    id <UITableViewDataSource> dataSource = _tableView.dataSource;
+////
+////    NSInteger sections = [dataSource numberOfSectionsInTableView:_tableView];
+////    NSLog(@"session =%i",sections);
+////    NSInteger row = [dataSource tableView:_tableView numberOfRowsInSection:sections];
+////    NSLog(@"-----------");
+//    _dataArry = @[@"1",@"2",@"3"];
+//    [_tableView reloadData];
+//}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [_dataArry count];
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellID = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+        
+    }
+    NSString *titleStr = _dataArry[indexPath.row];
+    cell.textLabel.text = titleStr;
+    return cell;
 }
 
 /*

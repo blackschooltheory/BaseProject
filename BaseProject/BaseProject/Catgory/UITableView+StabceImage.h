@@ -10,8 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UITableView (StabceImage)
 
+typedef void(^ReloadBlock)(void);
+
+
+@interface UITableView (StabceImage)
+@property (nonatomic, assign) BOOL firstReload;
+@property (nonatomic, strong) UIView *placeholderView;
+@property (nonatomic,   copy) void(^reloadBlock)(void);
 @end
 
 NS_ASSUME_NONNULL_END
