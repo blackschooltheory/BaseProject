@@ -18,20 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"child_oneVC 调用");
     self.view.backgroundColor = [UIColor grayColor];
-    
 }
-
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
+    NSLog(@"点击触发");
 }
-
-
--(void)touchBlock:(void (^)(void))block{
-    
+-(void)dealloc{
+    NSLog(@"调用了 oneVC 的dealloc ");
 }
-
 
 
 /*

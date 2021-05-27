@@ -75,7 +75,6 @@ static NSString  const * PrivacyPolicy = @"PrivacyPolicy";
     if (  device.orientation==UIDeviceOrientationLandscapeRight ) {
         [PublicMethodManager alertTitle:@"屏幕旋转了"];
     }
-    NSLog(@"deviceChage =%i",device.orientation);
    
   
 
