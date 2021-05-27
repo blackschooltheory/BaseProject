@@ -56,8 +56,8 @@
 
 - (void)checkEmpty {
     BOOL isEmpty = YES;//flag标示
-    
-    id <UITableViewDataSource> dataSource = self.dataSource;
+    id <UITableViewDataSource> dataSource = self.dataSource; //获取加载tableView 页面对象
+    // 下面的获取 section 与 row 的方法 实际上是加载 tableView 页面的数据源数据返回的 所以间接的可以判断当前的数据源是否有值，来判断是否显示数据加载图。
     NSInteger sections = 1;//默认一组
     if ([dataSource respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
         sections = [dataSource numberOfSectionsInTableView:self] - 1;//获取当前TableView组数
@@ -82,21 +82,20 @@
 
 - (void)makeDefaultPlaceholderView {
     self.bounds = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    TableStanceView *placeholderView = [[TableStanceView alloc] initWithFrame:self.bounds withGif:@""];
-//    __weak typeof(self) weakSelf = self;
-//    [placeholderView setReloadClickBlock:^{
-//        if (weakSelf.reloadBlock) {
-//            weakSelf.reloadBlock();
-//        }
-//    }];
+    TableStanceView *placeholderView = [[TableStanceView alloc] initWithFrame: CGRectMake(0, 0, 100, 100) withGif:@""];
+    //点击占位图中的按钮来重新加载数据
+    __weak typeof(self) weakSelf = self;
+    placeholderView.stanceBlock = ^{
+        if (weakSelf.reloadBlock) {
+            weakSelf.reloadBlock();
+        }
+    };
     self.placeholderView = placeholderView;
 }
 
 #pragma mark-------交换的方法
 -(void)reloadSwizzling{
-    
     [self checkEmpty];
-    
     [self reloadSwizzling];// 该方法执行的是 reload 方法
 }
 

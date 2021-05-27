@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-typedef void(^ReloadBlock)(void);
+//typedef void(^ReloadBlock)(void);
 
 
 @interface UITableView (StabceImage)

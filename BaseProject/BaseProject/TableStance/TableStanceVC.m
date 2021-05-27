@@ -41,12 +41,22 @@
     
 //    [_tableView reloadData];
     
-    [self performSelector:@selector(time3) withObject:nil afterDelay:3];
+//    [self performSelector:@selector(time3) withObject:nil afterDelay:3];
     
+    
+    __weak typeof(self) weakSelf = self;
+    _tableView.reloadBlock = ^{
+        weakSelf.dataArry = @[@"1",@"2",@"3"];
+        [weakSelf.tableView reloadData];
+        
+    };
     
 }
 -(void)time3{
     _dataArry = @[@"1",@"2",@"3"];
+//   NSInteger num = [self tableView:_tableView numberOfRowsInSection:0];
+//    NSLog(@"自动获取row数量==%i",num);
+    
        [_tableView reloadData];
 }
 //-(void)btnClick{

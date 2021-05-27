@@ -1,27 +1,22 @@
 //
-//  MVC_ViewController.m
+//  TemplateTableViewVC.m
 //  BaseProject
 //
-//  Created by dlk on 2021/3/22.
+//  Created by dlk on 2021/5/27.
 //  Copyright © 2021 DLK. All rights reserved.
 //
 
-#import "MVC_ViewController.h"
-#import "MVP_Model.h"
-#import "MVP_Presenter.h"
-@interface MVC_ViewController ()<MVC_ViewProtcol>
+#import "TemplateTableViewVC.h"
+
+@interface TemplateTableViewVC ()
 
 @end
 
-@implementation MVC_ViewController
+@implementation TemplateTableViewVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-}
--(void)updateDataArry:(NSMutableArray<MVP_Model *> *)arry{
-    //代理更新tableView的数据
 }
 
 /*

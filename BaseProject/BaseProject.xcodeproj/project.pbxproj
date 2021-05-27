@@ -45,6 +45,7 @@
 		4A95B5982658FEBC00B7C001 /* gdicon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4A95B5972658FEBC00B7C001 /* gdicon.svg */; };
 		4A95B59C265A0C5100B7C001 /* AddChildVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A95B59B265A0C5100B7C001 /* AddChildVC.m */; };
 		4A95B5A1265A0E7D00B7C001 /* Child_OneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A95B5A0265A0E7D00B7C001 /* Child_OneVC.m */; };
+		4A9848C1265F3538004B4C56 /* TemplateTableViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9848C0265F3538004B4C56 /* TemplateTableViewVC.m */; };
 		4A98CC252610A3440047EB7F /* BlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A98CC242610A3440047EB7F /* BlockVC.m */; };
 		4A98CC2A2610B8E70047EB7F /* BlockMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A98CC292610B8E70047EB7F /* BlockMode.m */; };
 		4A9D4F6A2652130F00F9A944 /* Carsh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D4F692652130F00F9A944 /* Carsh.m */; };
@@ -58,10 +59,6 @@
 		4AE006F225BFA4B5001300EC /* LandscapeLeftVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE006F125BFA4B5001300EC /* LandscapeLeftVC.m */; };
 		4AE2C5C625BE5815003ED184 /* TransitionAnimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2C5C525BE5815003ED184 /* TransitionAnimate.m */; };
 		4AE77FF726330619008810E5 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 4AE77FF626330619008810E5 /* index.html */; };
-		4AEC21F526083A360081867B /* MVC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEC21F426083A360081867B /* MVC_ViewController.m */; };
-		4AEC21F926083A560081867B /* MVP_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEC21F826083A560081867B /* MVP_Model.m */; };
-		4AEC21FD26083A6A0081867B /* MVP_View.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEC21FC26083A6A0081867B /* MVP_View.m */; };
-		4AEC220126083A9A0081867B /* MVP_Presenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEC220026083A9A0081867B /* MVP_Presenter.m */; };
 		4AEFF71A260D7550005771D0 /* ProjectResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFF719260D7550005771D0 /* ProjectResourceManager.m */; };
 		4AEFF71F260D7EA4005771D0 /* ProjectResourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFF71E260D7EA4005771D0 /* ProjectResourceModel.m */; };
 		4AEFF723260D7ED8005771D0 /* ProjectResourceViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFF722260D7ED8005771D0 /* ProjectResourceViewModel.m */; };
@@ -141,6 +138,8 @@
 		4A95B59B265A0C5100B7C001 /* AddChildVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddChildVC.m; sourceTree = "<group>"; };
 		4A95B59F265A0E7D00B7C001 /* Child_OneVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Child_OneVC.h; sourceTree = "<group>"; };
 		4A95B5A0265A0E7D00B7C001 /* Child_OneVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Child_OneVC.m; sourceTree = "<group>"; };
+		4A9848BF265F3538004B4C56 /* TemplateTableViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateTableViewVC.h; sourceTree = "<group>"; };
+		4A9848C0265F3538004B4C56 /* TemplateTableViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemplateTableViewVC.m; sourceTree = "<group>"; };
 		4A98CC232610A3440047EB7F /* BlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockVC.h; sourceTree = "<group>"; };
 		4A98CC242610A3440047EB7F /* BlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockVC.m; sourceTree = "<group>"; };
 		4A98CC282610B8E70047EB7F /* BlockMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockMode.h; sourceTree = "<group>"; };
@@ -166,14 +165,6 @@
 		4AE2C5C425BE5815003ED184 /* TransitionAnimate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionAnimate.h; sourceTree = "<group>"; };
 		4AE2C5C525BE5815003ED184 /* TransitionAnimate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimate.m; sourceTree = "<group>"; };
 		4AE77FF626330619008810E5 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		4AEC21F326083A360081867B /* MVC_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVC_ViewController.h; sourceTree = "<group>"; };
-		4AEC21F426083A360081867B /* MVC_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVC_ViewController.m; sourceTree = "<group>"; };
-		4AEC21F726083A560081867B /* MVP_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVP_Model.h; sourceTree = "<group>"; };
-		4AEC21F826083A560081867B /* MVP_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVP_Model.m; sourceTree = "<group>"; };
-		4AEC21FB26083A6A0081867B /* MVP_View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVP_View.h; sourceTree = "<group>"; };
-		4AEC21FC26083A6A0081867B /* MVP_View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVP_View.m; sourceTree = "<group>"; };
-		4AEC21FF26083A9A0081867B /* MVP_Presenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVP_Presenter.h; sourceTree = "<group>"; };
-		4AEC220026083A9A0081867B /* MVP_Presenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVP_Presenter.m; sourceTree = "<group>"; };
 		4AEFF718260D7550005771D0 /* ProjectResourceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectResourceManager.h; sourceTree = "<group>"; };
 		4AEFF719260D7550005771D0 /* ProjectResourceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectResourceManager.m; sourceTree = "<group>"; };
 		4AEFF71D260D7EA4005771D0 /* ProjectResourceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectResourceModel.h; sourceTree = "<group>"; };
@@ -289,6 +280,7 @@
 		4A64C230257E5FE400C4C5F5 /* BaseProject */ = {
 			isa = PBXGroup;
 			children = (
+				4A9848BE265F34D6004B4C56 /* TableView */,
 				FCF4AFA9265D42630077B328 /* KVO */,
 				FCEA089A265BD620000E238D /* TableStance */,
 				FCCC4CD5264AA91400C0C554 /* Catgory */,
@@ -344,7 +336,6 @@
 				4A7F3060261ED9AE0055D9DE /* RunLoop */,
 				4A98CC222610A32D0047EB7F /* Block */,
 				4AEFF717260D74A3005771D0 /* StorageCacheFile */,
-				4AEC21EC260838670081867B /* MVP */,
 				4AC37700260201DD00026C69 /* GCD */,
 				4AC3768925FF373F00026C69 /* WKWebVIew */,
 				FC142D4725F65A4100D8765F /* StringToUnicode */,
@@ -411,6 +402,15 @@
 				4A862B49265A824E003096D6 /* Child_TwoVC.m */,
 			);
 			path = AddChild;
+			sourceTree = "<group>";
+		};
+		4A9848BE265F34D6004B4C56 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				4A9848BF265F3538004B4C56 /* TemplateTableViewVC.h */,
+				4A9848C0265F3538004B4C56 /* TemplateTableViewVC.m */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		4A98CC222610A32D0047EB7F /* Block */ = {
@@ -492,21 +492,6 @@
 				4AE2C5C525BE5815003ED184 /* TransitionAnimate.m */,
 			);
 			path = TransitionAnimate;
-			sourceTree = "<group>";
-		};
-		4AEC21EC260838670081867B /* MVP */ = {
-			isa = PBXGroup;
-			children = (
-				4AEC21F326083A360081867B /* MVC_ViewController.h */,
-				4AEC21F426083A360081867B /* MVC_ViewController.m */,
-				4AEC21F726083A560081867B /* MVP_Model.h */,
-				4AEC21F826083A560081867B /* MVP_Model.m */,
-				4AEC21FB26083A6A0081867B /* MVP_View.h */,
-				4AEC21FC26083A6A0081867B /* MVP_View.m */,
-				4AEC21FF26083A9A0081867B /* MVP_Presenter.h */,
-				4AEC220026083A9A0081867B /* MVP_Presenter.m */,
-			);
-			path = MVP;
 			sourceTree = "<group>";
 		};
 		4AEFF717260D74A3005771D0 /* StorageCacheFile */ = {
@@ -671,7 +656,6 @@
 			files = (
 				4AC3768C25FF376500026C69 /* DLKWebViewVC.m in Sources */,
 				4A98CC252610A3440047EB7F /* BlockVC.m in Sources */,
-				4AEC21F926083A560081867B /* MVP_Model.m in Sources */,
 				4A9D4F6A2652130F00F9A944 /* Carsh.m in Sources */,
 				FCF4AFAC265D42830077B328 /* KVOModel.m in Sources */,
 				4A294DAB262E7F420038B11B /* TwoVC.m in Sources */,
@@ -685,7 +669,7 @@
 				FCEA089E265BD79B000E238D /* TableStanceVC.m in Sources */,
 				4AD6C1C225E3DFEC0048A9CC /* CalendarsNotifVC.m in Sources */,
 				4A7CCE812592280D00324B41 /* FrameworkVC.m in Sources */,
-				4AEC21F526083A360081867B /* MVC_ViewController.m in Sources */,
+				4A9848C1265F3538004B4C56 /* TemplateTableViewVC.m in Sources */,
 				4AEFF71A260D7550005771D0 /* ProjectResourceManager.m in Sources */,
 				4AE006F225BFA4B5001300EC /* LandscapeLeftVC.m in Sources */,
 				FC142D4A25F65A8D00D8765F /* StringToUnicode.m in Sources */,
@@ -694,7 +678,6 @@
 				4A480A9E26565BB3003E13AF /* CompareFloat.m in Sources */,
 				4A294DA6262E7F350038B11B /* OneVC.m in Sources */,
 				4AEFF71F260D7EA4005771D0 /* ProjectResourceModel.m in Sources */,
-				4AEC220126083A9A0081867B /* MVP_Presenter.m in Sources */,
 				4A941C252625393D007DD0E6 /* RunLoopFunctionVC.m in Sources */,
 				4A950ED325BE9D200046CD46 /* PublicMethodManager.m in Sources */,
 				FC70CAB22645662D002ED5A8 /* PrivacyPolicyVC.m in Sources */,
@@ -706,7 +689,6 @@
 				4A7CCE7D259227E900324B41 /* FunctionVC.m in Sources */,
 				4A7CCD11258E2F3E00324B41 /* LaunchVC.m in Sources */,
 				FC0D5D75263998EF00509E71 /* RunTimeVC.m in Sources */,
-				4AEC21FD26083A6A0081867B /* MVP_View.m in Sources */,
 				4A7F3063261ED9C40055D9DE /* RunloopVC.m in Sources */,
 				FCCC4CE2264AB4BC00C0C554 /* OneModel.m in Sources */,
 				FCEA08A2265BD827000E238D /* TableStanceView.m in Sources */,

@@ -1,8 +1,8 @@
 //
-//  MVC_ViewController.h
+//  TemplateTableViewVC.h
 //  BaseProject
 //
-//  Created by dlk on 2021/3/22.
+//  Created by dlk on 2021/5/27.
 //  Copyright © 2021 DLK. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MVC_ViewController : BaseViewController
+@interface TemplateTableViewVC : BaseViewController
 
 @end
 

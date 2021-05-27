@@ -11,6 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TableStanceView : UIView
+
+@property(nonatomic,copy)  void(^stanceBlock) (void) ;
+
+
 - (instancetype)initWithFrame:(CGRect)frame withGif:(NSString *)gifStr;
 @end
 

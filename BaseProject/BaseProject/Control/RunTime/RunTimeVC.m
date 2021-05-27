@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view.
 }
 
-void  goodFun(id obj ,SEL _cmd){
+void  goodFun(id obj ,SEL _cmd , id params){
     NSLog(@"invaction Function");
 }
 #pragma  mark--------消息重定向

@@ -32,6 +32,11 @@
     [button2 addTarget:self action:@selector(btn2Click) forControlEvents:UIControlEventTouchUpInside];
     
 }
+
+/*
+ addChildViewController 可以在当前页面添加其他的VC的View 并且父页面可以传递子页面的转屏，以及外观事件
+  当收到内存警告时可以删除未显示View(而之前我们页面中加载了（登录失败的提示View，上传附件成功的提示View，网络失败的提示View等这些虽然少，但是一直都在我们内存中）)
+ */
 - (void) btnClick{
     _oneVC = [Child_OneVC new];
     _oneVC.view.frame =CGRectMake(0, 200, [PublicMethodManager screenWith], 300);
