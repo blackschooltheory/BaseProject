@@ -9,6 +9,7 @@
 #import "AddChildVC.h"
 #import "Child_OneVC.h"
 #import "Child_TwoVC.h"
+#import <Masonry/Masonry.h>
 
 @interface AddChildVC ()
 @property(nonatomic,strong)Child_OneVC *oneVC;
@@ -16,6 +17,9 @@
 @end
 
 @implementation AddChildVC
+/*
+ 可以实现 美团，淘宝的 scrollerView  滚动切换页面功能；
+ */
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,34 +45,69 @@
     _oneVC.view.frame =CGRectMake(0, 200, [PublicMethodManager screenWith], 300);
     [self addChildViewController:_oneVC];
     [self.view addSubview:_oneVC.view];
-//    [_oneVC didMoveToParentViewController:self];
-//   self didMoveToParentViewController
-  
+  /*
+   willMoveToParentViewController:
+   didMoveToParentViewController:
+   removeFromParentViewController
+   关于这个当前页面的显示，移除方法等等实际上并不用调用 ; addChildViewController  ,transitionFromViewController 调用的时候已经调用了。
+   */
+
     
-    [self performSelector:@selector(rrrr) withObject:nil afterDelay:2];
+    Child_TwoVC *vc = [Child_TwoVC new];
+    vc.view.frame =CGRectMake(0, 500, [PublicMethodManager screenWith], 300);
+    [self addChildViewController:vc];
+    [self.view addSubview:vc.view];
+
 }
--(void)rrrr{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.oneVC willMoveToParentViewController:nil];
-        [self.oneVC removeFromParentViewController];
-    });
-   
-}
+
 - (void)btn2Click{
     
+    /*
     Child_TwoVC *vc = [Child_TwoVC new];
     [self addChildViewController:vc];
     __weak typeof(self) weakSelf = self;
     [self transitionFromViewController:_oneVC toViewController:vc duration:0.2 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:^(BOOL finished) {
-        //下面
-//        if(finished){
-//            [vc didMoveToParentViewController:weakSelf];
-//            [weakSelf.oneVC willMoveToParentViewController:nil];
-//            [weakSelf.oneVC removeFromParentViewController];
-//            weakSelf.oneVC = nil;
-//             }
+        // finished 是否成功切换视图
     }];
+     */
+    
+    //输出当前最上层的VC
+    UIViewController *vc = [PublicMethodManager currentVC];
+    if ([[vc class] isEqual:[UINavigationController class]]) {
+        UINavigationController *nav = (UINavigationController *)vc;
+        UIViewController *avc = [nav topViewController];
+        NSLog(@"%@",NSStringFromClass([avc class]));
+    }
+    
+//    NSLog(@"%@",NSStringFromClass([vc class]));
+    
+    //触发子页面 的willAppearance
+        
+//    [self beginAppearanceTransition:YES animated:YES];
+    
+    
+    
 }
+
+/*
+
+使用beginAppearanceTransition:(BOOL)isAppearing animated:(BOOL)animated和endAppearanceTransition来处理。
+
+Controller里面的viewWillAppear:(BOOL)animated在subview真正加到父view之前调用。
+Controller里面的viewDidAppear:(BOOL)animated在真正被add到父view之后调用。
+Controller里面的ViewWillDisappear:(BOOL)animated在subview从父view移除前调用。
+Controller里面的ViewWillDidDisappear:(BOOL)animated在removeFromSuperview之后调用。
+ 
+ 
+ [VC beginAppearanceTransition:YES animated:YES]触发towCol的viewWillAppear。
+ [VC endAppearanceTransition]触发viewDidAppear。
+
+ [VC beginAppearanceTransition:NO animated:YES]触发towCol的viewWillDisappear。
+ [VC endAppearanceTransition]触发viewDidDisappear。
+
+*/
+
+
 
 /*
  #pragma mark - Navigation

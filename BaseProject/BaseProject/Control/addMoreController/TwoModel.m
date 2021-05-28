@@ -18,7 +18,7 @@
     IMP addFunIMP = method_getImplementation(mm);
     
     BOOL addStatus = class_addMethod([self class], @selector(addTwoFun), addFunIMP, method_getTypeEncoding(mm));
-    NSString *status = addStatus ? @"添加成功" : @"添加失败";
+    NSString *status = addStatus ? @"在类中添加方法添加成功" : @"在类中添加方法添加失败（类中有的方法再次添加是不能添加成功的）";
     
     NSLog(status);
 }

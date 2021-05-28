@@ -10,6 +10,7 @@
 #import "LandscapeLeftVC.h"
 #import "PublicMethodManager.h"
 #import "ModelLanscapeLeftVC.h"
+#import "UIFont+AutormaticFont.h"
 
 @interface DeviceOrientation ()
 
@@ -29,6 +30,7 @@
     
     discriptLabel.text=@"横屏方式有两种，一种是模态推出的方式；一中的导航栏推出方式；两种的设置方式应该用一样的方法；其他的横屏方式要不就是会失效，要不就是返回当前页面时还需要改回之前屏幕的横竖设置";
     discriptLabel.numberOfLines=0;
+    discriptLabel.font = [UIFont systemFontOfSize:10];
     
 
     UIButton *hButton = [[UIButton alloc]initWithFrame:CGRectMake(0,200, 100, 50)];

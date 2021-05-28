@@ -67,15 +67,15 @@
     
 //    [_wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:indexPatch]]];
     
-//    [self.wkWebView loadHTMLString:urlHtml baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+    [self.wkWebView loadHTMLString:urlHtml baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
 
     //加载 svg 的方式
-    NSString *svgPatch = [[NSBundle mainBundle]pathForResource:@"gdicon.svg" ofType:nil];
-    
-    NSData *svgData = [NSData dataWithContentsOfFile:svgPatch];
-    NSString *reasourcePath = [[NSBundle mainBundle] resourcePath];
-        NSURL *baseUrl = [[NSURL alloc] initFileURLWithPath:reasourcePath isDirectory:true];
-    [self.wkWebView loadData:svgData MIMEType:@"image/svg+xml" characterEncodingName:@"UIF-8" baseURL:baseUrl];
+//    NSString *svgPatch = [[NSBundle mainBundle]pathForResource:@"gdicon.svg" ofType:nil];
+//
+//    NSData *svgData = [NSData dataWithContentsOfFile:svgPatch];
+//    NSString *reasourcePath = [[NSBundle mainBundle] resourcePath];
+//        NSURL *baseUrl = [[NSURL alloc] initFileURLWithPath:reasourcePath isDirectory:true];
+//    [self.wkWebView loadData:svgData MIMEType:@"image/svg+xml" characterEncodingName:@"UIF-8" baseURL:baseUrl];
 //
     
     
@@ -190,8 +190,19 @@
     //开始提交
     NSLog(@"是否开始提交");
 }
+
+//注入JS 实现字体放大
+
+
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     //导航栏加载结束
+    NSString *str = @"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '150%'";
+    [webView evaluateJavaScript:str completionHandler:^(id _Nullable respon, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"%@",error);
+            }
+    }];
+    
     NSLog(@"是否结束");
 }
 -(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{

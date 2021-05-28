@@ -44,6 +44,7 @@
 //    [self performSelector:@selector(time3) withObject:nil afterDelay:3];
     
     
+    [self.view layoutIfNeeded];
     __weak typeof(self) weakSelf = self;
     _tableView.reloadBlock = ^{
         weakSelf.dataArry = @[@"1",@"2",@"3"];

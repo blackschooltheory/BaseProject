@@ -17,10 +17,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(CGFloat)screenHeight;
 
+// 判断iphoneX
 + (BOOL)isPhoneX;
 
+//获取当前最上面的VC
 +(UIViewController *)currentVC;
+
+//系统的弹框
 +(void)alertTitle:(NSString *)title;
+//解析url 入参信息
++(NSDictionary *)getURLParamsWithUrlStr:(NSString *)urlStr;
 @end
 
 NS_ASSUME_NONNULL_END

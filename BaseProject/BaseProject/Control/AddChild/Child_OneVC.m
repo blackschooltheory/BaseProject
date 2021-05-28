@@ -27,6 +27,15 @@
     NSLog(@"调用了 oneVC 的dealloc ");
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+}
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+}
 
 /*
 #pragma mark - Navigation

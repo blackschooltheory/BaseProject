@@ -46,6 +46,7 @@
 		4A95B59C265A0C5100B7C001 /* AddChildVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A95B59B265A0C5100B7C001 /* AddChildVC.m */; };
 		4A95B5A1265A0E7D00B7C001 /* Child_OneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A95B5A0265A0E7D00B7C001 /* Child_OneVC.m */; };
 		4A9848C1265F3538004B4C56 /* TemplateTableViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9848C0265F3538004B4C56 /* TemplateTableViewVC.m */; };
+		4A9848D32660C4F9004B4C56 /* UIFont+AutormaticFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9848D22660C4F9004B4C56 /* UIFont+AutormaticFont.m */; };
 		4A98CC252610A3440047EB7F /* BlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A98CC242610A3440047EB7F /* BlockVC.m */; };
 		4A98CC2A2610B8E70047EB7F /* BlockMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A98CC292610B8E70047EB7F /* BlockMode.m */; };
 		4A9D4F6A2652130F00F9A944 /* Carsh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D4F692652130F00F9A944 /* Carsh.m */; };
@@ -141,6 +142,8 @@
 		4A95B5A0265A0E7D00B7C001 /* Child_OneVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Child_OneVC.m; sourceTree = "<group>"; };
 		4A9848BF265F3538004B4C56 /* TemplateTableViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateTableViewVC.h; sourceTree = "<group>"; };
 		4A9848C0265F3538004B4C56 /* TemplateTableViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemplateTableViewVC.m; sourceTree = "<group>"; };
+		4A9848D12660C4F9004B4C56 /* UIFont+AutormaticFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+AutormaticFont.h"; sourceTree = "<group>"; };
+		4A9848D22660C4F9004B4C56 /* UIFont+AutormaticFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+AutormaticFont.m"; sourceTree = "<group>"; };
 		4A98CC232610A3440047EB7F /* BlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockVC.h; sourceTree = "<group>"; };
 		4A98CC242610A3440047EB7F /* BlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockVC.m; sourceTree = "<group>"; };
 		4A98CC282610B8E70047EB7F /* BlockMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockMode.h; sourceTree = "<group>"; };
@@ -217,7 +220,6 @@
 				72BB7A938EF9E8055E80853B /* Pods-BaseProject.debug.xcconfig */,
 				E7243419E16829FB90BBE7C9 /* Pods-BaseProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -568,6 +570,8 @@
 			children = (
 				FCCC4CDB264AAA7500C0C554 /* UITableView+StabceImage.h */,
 				FCCC4CDC264AAA7600C0C554 /* UITableView+StabceImage.m */,
+				4A9848D12660C4F9004B4C56 /* UIFont+AutormaticFont.h */,
+				4A9848D22660C4F9004B4C56 /* UIFont+AutormaticFont.m */,
 			);
 			path = Catgory;
 			sourceTree = "<group>";
@@ -718,6 +722,7 @@
 				4A98CC2A2610B8E70047EB7F /* BlockMode.m in Sources */,
 				4A54BCD325C3E8C4000BA17B /* ForbidCatchScreenVC.m in Sources */,
 				FCEA089E265BD79B000E238D /* TableStanceVC.m in Sources */,
+				4A9848D32660C4F9004B4C56 /* UIFont+AutormaticFont.m in Sources */,
 				4AD6C1C225E3DFEC0048A9CC /* CalendarsNotifVC.m in Sources */,
 				4A7CCE812592280D00324B41 /* FrameworkVC.m in Sources */,
 				4A9848C1265F3538004B4C56 /* TemplateTableViewVC.m in Sources */,
@@ -897,7 +902,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QKE34TA3JX;
 				INFOPLIST_FILE = BaseProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -918,7 +923,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QKE34TA3JX;
 				INFOPLIST_FILE = BaseProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
