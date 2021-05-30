@@ -10,6 +10,9 @@
 #import <objc/runtime.h>
 
 @implementation UIFont (AutormaticFont)
+/*
+ 
+
 +(void)load{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -40,4 +43,5 @@
     changeFont = [self swizzlingFontWithSize:fontSize+5];
     return changeFont;
 }
+ */
 @end

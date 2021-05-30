@@ -29,6 +29,15 @@
     }
     return iPhoneX;
 }
+
++(float)nativeTopHeight{
+    float height = 64;
+    if ([PublicMethodManager isPhoneX]) {
+        height = 88;
+    }
+    return height;
+}
+
 #pragma mark-------获取当前显示的VC
 +(UIViewController *)currentVC{
     

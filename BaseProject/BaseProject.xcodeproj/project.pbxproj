@@ -47,6 +47,8 @@
 		4A95B5A1265A0E7D00B7C001 /* Child_OneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A95B5A0265A0E7D00B7C001 /* Child_OneVC.m */; };
 		4A9848C1265F3538004B4C56 /* TemplateTableViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9848C0265F3538004B4C56 /* TemplateTableViewVC.m */; };
 		4A9848D32660C4F9004B4C56 /* UIFont+AutormaticFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9848D22660C4F9004B4C56 /* UIFont+AutormaticFont.m */; };
+		4A9848E82662250A004B4C56 /* LoadSVGVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9848E72662250A004B4C56 /* LoadSVGVC.m */; };
+		4A9848EC26624949004B4C56 /* svg1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4A9848EB26624949004B4C56 /* svg1.svg */; };
 		4A98CC252610A3440047EB7F /* BlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A98CC242610A3440047EB7F /* BlockVC.m */; };
 		4A98CC2A2610B8E70047EB7F /* BlockMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A98CC292610B8E70047EB7F /* BlockMode.m */; };
 		4A9D4F6A2652130F00F9A944 /* Carsh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D4F692652130F00F9A944 /* Carsh.m */; };
@@ -144,6 +146,9 @@
 		4A9848C0265F3538004B4C56 /* TemplateTableViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemplateTableViewVC.m; sourceTree = "<group>"; };
 		4A9848D12660C4F9004B4C56 /* UIFont+AutormaticFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+AutormaticFont.h"; sourceTree = "<group>"; };
 		4A9848D22660C4F9004B4C56 /* UIFont+AutormaticFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+AutormaticFont.m"; sourceTree = "<group>"; };
+		4A9848E62662250A004B4C56 /* LoadSVGVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadSVGVC.h; sourceTree = "<group>"; };
+		4A9848E72662250A004B4C56 /* LoadSVGVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadSVGVC.m; sourceTree = "<group>"; };
+		4A9848EB26624949004B4C56 /* svg1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = svg1.svg; sourceTree = "<group>"; };
 		4A98CC232610A3440047EB7F /* BlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockVC.h; sourceTree = "<group>"; };
 		4A98CC242610A3440047EB7F /* BlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockVC.m; sourceTree = "<group>"; };
 		4A98CC282610B8E70047EB7F /* BlockMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockMode.h; sourceTree = "<group>"; };
@@ -345,6 +350,7 @@
 		4A7CCE77259225CF00324B41 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				4A9848E5266224E4004B4C56 /* SVG */,
 				4A95B59E265A0C5B00B7C001 /* AddChild */,
 				4A480AA5265787C1003E13AF /* Alert */,
 				4A60067E26564EC900501AF3 /* CompareFloat */,
@@ -430,6 +436,16 @@
 				4A9848C0265F3538004B4C56 /* TemplateTableViewVC.m */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		4A9848E5266224E4004B4C56 /* SVG */ = {
+			isa = PBXGroup;
+			children = (
+				4A9848EB26624949004B4C56 /* svg1.svg */,
+				4A9848E62662250A004B4C56 /* LoadSVGVC.h */,
+				4A9848E72662250A004B4C56 /* LoadSVGVC.m */,
+			);
+			path = SVG;
 			sourceTree = "<group>";
 		};
 		4A98CC222610A32D0047EB7F /* Block */ = {
@@ -662,6 +678,7 @@
 				4A7CCE97259228C900324B41 /* menu_0@2x.png in Resources */,
 				4A95B5982658FEBC00B7C001 /* gdicon.svg in Resources */,
 				4A7CCE96259228C900324B41 /* menu_2@3x.png in Resources */,
+				4A9848EC26624949004B4C56 /* svg1.svg in Resources */,
 				4AE77FF726330619008810E5 /* index.html in Resources */,
 				4A7CCE99259228C900324B41 /* menu_1@3x.png in Resources */,
 				4A7CCE9B259228C900324B41 /* menu_0_sel@2x.png in Resources */,
@@ -720,6 +737,7 @@
 				4A480AA82657885F003E13AF /* MoreAlertVC.m in Sources */,
 				4AEFF723260D7ED8005771D0 /* ProjectResourceViewModel.m in Sources */,
 				4A98CC2A2610B8E70047EB7F /* BlockMode.m in Sources */,
+				4A9848E82662250A004B4C56 /* LoadSVGVC.m in Sources */,
 				4A54BCD325C3E8C4000BA17B /* ForbidCatchScreenVC.m in Sources */,
 				FCEA089E265BD79B000E238D /* TableStanceVC.m in Sources */,
 				4A9848D32660C4F9004B4C56 /* UIFont+AutormaticFont.m in Sources */,

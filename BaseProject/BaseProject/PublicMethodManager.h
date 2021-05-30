@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 //获取当前最上面的VC
 +(UIViewController *)currentVC;
 
++(float)nativeTopHeight;
 //系统的弹框
 +(void)alertTitle:(NSString *)title;
 //解析url 入参信息

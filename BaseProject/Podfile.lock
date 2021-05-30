@@ -14,21 +14,31 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - CocoaLumberjack (3.6.2):
+    - CocoaLumberjack/Core (= 3.6.2)
+  - CocoaLumberjack/Core (3.6.2)
   - Masonry (1.1.0)
+  - SVGKit (2.1.1):
+    - CocoaLumberjack (~> 3.0)
 
 DEPENDENCIES:
   - AFNetworking
   - Masonry
+  - SVGKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - CocoaLumberjack
     - Masonry
+    - SVGKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
 
-PODFILE CHECKSUM: f3b01d054319fd295ad212277ca8b260a2803342
+PODFILE CHECKSUM: 0c6dabcb522dc96c67700cd2f3fff64c7af6adb5
 
 COCOAPODS: 1.10.1
