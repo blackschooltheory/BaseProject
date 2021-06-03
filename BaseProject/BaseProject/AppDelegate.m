@@ -63,12 +63,35 @@ static NSString  const * PrivacyPolicy = @"PrivacyPolicy";
 //    CGAffineTransformMakeRotation(M_PI_4);
 //    [self adViewLaunch];
     
+    if ([self getProxyStatus]) {
+        [PublicMethodManager alertTitle:@"当前是代理环境！"];
+    }
+    
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(handleDeviceOrientationChange:)
                                          name:UIDeviceOrientationDidChangeNotification object:nil];
 
     return YES;
 }
+
+#pragma  mark--------判断APP是否处于代理的环境下
+
+-(BOOL)getProxyStatus {
+    CFDictionaryRef dicRef = CFNetworkCopySystemProxySettings();
+
+    const CFStringRef proxyCFstr = CFDictionaryGetValue(dicRef, (const void*)kCFNetworkProxiesHTTPProxy);
+
+    NSString* proxy = (__bridge NSString *) (proxyCFstr);
+
+     if (proxy) {
+        return YES;
+    }
+     else return NO;
+}
+
+
+
+#pragma mark--------监听屏幕旋转的事件
 
 -(void)handleDeviceOrientationChange:(NSNotification *)notif{
     UIDevice *device = notif.object ;
@@ -82,14 +105,10 @@ static NSString  const * PrivacyPolicy = @"PrivacyPolicy";
 }
 #pragma mark------隐私政策提示
 -(void)privacyPolicy{
-    
-    
     NSUserDefaults *defalts = [NSUserDefaults  standardUserDefaults];
     BOOL isShowPrivacyPolicy =  [defalts boolForKey:PrivacyPolicy];
     if (!isShowPrivacyPolicy) {
         //弹出隐私政策
-        
-        
     }
     
 }

@@ -9,6 +9,7 @@
 #import "LoadSVGVC.h"
 #import <SVGKit/SVGKit.h>
 #import <Masonry/Masonry.h>
+#import <AFNetworking/AFNetworking.h>
 @interface LoadSVGVC ()
 
 @end
@@ -47,10 +48,57 @@
     }];
     
     
+    
+    
+    
+    
+}
+
+-(UIImage *)name:(NSString *)name imgv:(UIImageView *)imgv tintColor:(UIColor *)tintColor{
+    
+    UIImage *svgImage = [SVGKImage imageNamed:@"svg1.svg"].UIImage;
+    
+    CGRect rect = CGRectMake(0, 0, svgImage.size.width, svgImage.size.height);
+    CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(svgImage.CGImage);
+    BOOL opaque = alphaInfo == (kCGImageAlphaNoneSkipLast | kCGImageAlphaNoneSkipFirst | kCGImageAlphaNone);
+    UIGraphicsBeginImageContextWithOptions(svgImage.size, opaque, svgImage.scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, 0, svgImage.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextSetBlendMode(context, kCGBlendModeNormal);
+    CGContextClipToMask(context, rect, svgImage.CGImage);
+    
+    CGContextSetFillColorWithColor(context, tintColor.CGColor);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+    
+}
+
+
+-(void)loadData{
+    
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 5.0;
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", @"text/plain", @"text/json", @"text/javascript",nil];
+    manager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
+    NSInteger timeInter = [NSDate timeIntervalSinceReferenceDate];
+    //添加时间字符串可以防止 304 not modified 缓存问题解决
+    NSString *urlStr = [NSString stringWithFormat:@"http://192.168.169.94:8080/abc.json?t=%i",timeInter];
+    [manager GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *result = (NSDictionary *) responseObject;
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            if (error) {
+                NSLog(@"%@",error.localizedDescription);
+            }
+        }];
+    
 }
 
 /*
-#pragma mark - Navigation 
+#pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

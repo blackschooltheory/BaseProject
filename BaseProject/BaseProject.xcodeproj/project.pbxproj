@@ -21,6 +21,7 @@
 		4A64C23E257E5FE800C4C5F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A64C23D257E5FE800C4C5F5 /* Assets.xcassets */; };
 		4A64C241257E5FE800C4C5F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A64C23F257E5FE800C4C5F5 /* LaunchScreen.storyboard */; };
 		4A64C244257E5FE800C4C5F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A64C243257E5FE800C4C5F5 /* main.m */; };
+		4A726CF3266613760024010A /* ScrollViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A726CF2266613760024010A /* ScrollViewVC.m */; };
 		4A7CCD11258E2F3E00324B41 /* LaunchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7CCD10258E2F3E00324B41 /* LaunchVC.m */; };
 		4A7CCE7D259227E900324B41 /* FunctionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7CCE7C259227E900324B41 /* FunctionVC.m */; };
 		4A7CCE812592280D00324B41 /* FrameworkVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7CCE802592280D00324B41 /* FrameworkVC.m */; };
@@ -107,6 +108,8 @@
 		4A64C240257E5FE800C4C5F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A64C242257E5FE800C4C5F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A64C243257E5FE800C4C5F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4A726CF1266613760024010A /* ScrollViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewVC.h; sourceTree = "<group>"; };
+		4A726CF2266613760024010A /* ScrollViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewVC.m; sourceTree = "<group>"; };
 		4A7CCD0F258E2F3E00324B41 /* LaunchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchVC.h; sourceTree = "<group>"; };
 		4A7CCD10258E2F3E00324B41 /* LaunchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchVC.m; sourceTree = "<group>"; };
 		4A7CCE7B259227E900324B41 /* FunctionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionVC.h; sourceTree = "<group>"; };
@@ -328,6 +331,15 @@
 			path = BaseProject;
 			sourceTree = "<group>";
 		};
+		4A726CF02666135C0024010A /* ScrollerView */ = {
+			isa = PBXGroup;
+			children = (
+				4A726CF1266613760024010A /* ScrollViewVC.h */,
+				4A726CF2266613760024010A /* ScrollViewVC.m */,
+			);
+			path = ScrollerView;
+			sourceTree = "<group>";
+		};
 		4A7CCD0C258E261B00324B41 /* image */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +362,7 @@
 		4A7CCE77259225CF00324B41 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				4A726CF02666135C0024010A /* ScrollerView */,
 				4A9848E5266224E4004B4C56 /* SVG */,
 				4A95B59E265A0C5B00B7C001 /* AddChild */,
 				4A480AA5265787C1003E13AF /* Alert */,
@@ -760,6 +773,7 @@
 				4A14CC0625CB903F00D29412 /* ModelPresentVC.m in Sources */,
 				FCCC4CE6264AB4F900C0C554 /* TwoModel.m in Sources */,
 				4A480AAD265789EA003E13AF /* MoreAlertController.m in Sources */,
+				4A726CF3266613760024010A /* ScrollViewVC.m in Sources */,
 				4A7CCE7D259227E900324B41 /* FunctionVC.m in Sources */,
 				4A7CCD11258E2F3E00324B41 /* LaunchVC.m in Sources */,
 				FC0D5D75263998EF00509E71 /* RunTimeVC.m in Sources */,
