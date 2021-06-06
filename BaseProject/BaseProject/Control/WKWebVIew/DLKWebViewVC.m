@@ -65,9 +65,9 @@
 
 //    allowingReadAccessToURL  这个入参必须是一个正常的url 路径
     
-//    [_wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:indexPatch]]];
-    
-    [self.wkWebView loadHTMLString:urlHtml baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+    [self.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://docker1.any800.com/chatVisitor/mobile.html?codeKey=1&companyPk=ff80808170ee299f0170f0afdaec0000&channelPk=e1ac1a558aeb11ebbdeb000c2961438f#/"]]];
+
+//    [self.wkWebView loadHTMLString:urlHtml baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
 
     //加载 svg 的方式
 //    NSString *svgPatch = [[NSBundle mainBundle]pathForResource:@"gdicon.svg" ofType:nil];
@@ -202,7 +202,7 @@
                 NSLog(@"%@",error);
             }
     }];
-    
+
     NSLog(@"是否结束");
 }
 -(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{
@@ -210,9 +210,9 @@
     NSLog(@"加载过程出现失败");
 }
 ////收到重定向
-//-(void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation{
-//    NSLog(@"重定向");
-//}
+-(void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation{
+    NSLog(@"重定向");
+}
 //// https 身份验证
 //-(void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler{
 //
