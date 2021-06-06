@@ -13,8 +13,10 @@
 #import "AddChildVC.h"
 #import "KVOModel.h"
 
-@interface Performance ()
+@interface Performance ()<UIDocumentPickerDelegate>
 @property(nonatomic,assign)NSInteger index;
+@property(nonatomic,strong)UIDocumentPickerViewController *documentVC;
+
 @end
 
 @implementation Performance
@@ -25,8 +27,105 @@
     
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
     button.backgroundColor = [UIColor grayColor];
-    [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(click2) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+}
+-(UIDocumentPickerViewController *)documentVC{
+    if (!_documentVC ){
+        NSArray *typeArr = @[@"public.content",@"public.text"];
+        
+        _documentVC = [[UIDocumentPickerViewController alloc]initWithDocumentTypes:typeArr inMode:UIDocumentPickerModeOpen];
+        _documentVC.delegate = self;
+        _documentVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    }
+        return _documentVC;
+}
+-(void)click2{
+    
+    
+    [self presentViewController:self.documentVC animated:YES completion:nil];
+    
+}
+
+#pragma  mark------选中文档回调
+-(void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls{
+    // 获取授权
+       BOOL fileUrlAuthozied = [urls.firstObject startAccessingSecurityScopedResource];
+       if (fileUrlAuthozied) {
+           // 通过文件协调工具来得到新的文件地址，以此得到文件保护功能
+           NSFileCoordinator *fileCoordinator = [[NSFileCoordinator alloc] init];
+           NSError *error;
+           
+           [fileCoordinator coordinateReadingItemAtURL:urls.firstObject options:0 error:&error byAccessor:^(NSURL *newURL) {
+               // 读取文件
+               NSString *fileName = [newURL lastPathComponent];
+               NSError *error = nil;
+               NSData *fileData = [NSData dataWithContentsOfURL:newURL options:NSDataReadingMappedIfSafe error:&error];
+               if (error) {
+                   // 读取出错
+               } else {
+                   // 上传
+                   NSLog(@"fileName : %@", fileName);
+                   // [self uploadingWithFileData:fileData fileName:fileName fileURL:newURL];
+               }
+               [self dismissViewControllerAnimated:YES completion:NULL];
+           }];
+           [urls.firstObject stopAccessingSecurityScopedResource];
+       } else {
+           // 授权失败
+       }
+}
+
+#pragma mark-----上传APP文档到系统中
+- (void)downLoadWithFilePath:(NSString *)filePath {
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (version >= 11) {
+        
+    } else {
+//        [MBProgressHUD showError:@"下载文件要求手机系统版本在11.0以上"];
+        return;
+    }
+    /**
+    /// 保存网络文件到沙盒一
+    NSURLRequest *req = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:filePath]];
+    NSData *fileData = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
+    NSString *temp = NSTemporaryDirectory();
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSString *fullPath = [self getNativeFilePath:[filePath componentsSeparatedByString:@"/"].lastObject];
+    BOOL downResult = [fm createFileAtPath:fullPath contents:fileData attributes:nil];
+    */
+    /// 保存网络文件到沙盒二
+    NSData *fileData = [NSData dataWithContentsOfURL:[NSURL URLWithString:filePath]];
+    NSString *fullPath = [self getNativeFilePath:[filePath componentsSeparatedByString:@"/"].lastObject];
+    BOOL downResult = [fileData writeToFile:fullPath atomically:YES];
+    
+    if (downResult) {
+        UIDocumentPickerViewController *documentPickerVC = [[UIDocumentPickerViewController alloc] initWithURL:[NSURL fileURLWithPath:fullPath] inMode:UIDocumentPickerModeExportToService];
+        // 设置代理
+        documentPickerVC.delegate = self;
+        // 设置模态弹出方式
+        documentPickerVC.modalPresentationStyle = UIModalPresentationFormSheet;
+        [self.navigationController presentViewController:documentPickerVC animated:YES completion:nil];
+    }
+}
+ 
+// 获得文件沙盒地址
+- (NSString *)getNativeFilePath:(NSString *)fileName {
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *munu = [NSString stringWithFormat:@"%@/%@",@"downLoad",fileName];
+    NSString *filePath = [path stringByAppendingPathComponent:munu];
+    // 判断是否存在,不存在则创建
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    // fileExistsAtPath 判断一个文件或目录是否有效，isDirectory判断是否一个目录
+    BOOL isDir = NO;
+    NSMutableArray *theArr = [[filePath componentsSeparatedByString:@"/"] mutableCopy];
+    [theArr removeLastObject];
+    NSString *thePath = [theArr componentsJoinedByString:@"/"];
+    BOOL existed = [fileManager fileExistsAtPath:thePath isDirectory:&isDir];
+    if ( !(isDir == YES && existed == YES) ) { // 如果文件夹不存在
+        [fileManager createDirectoryAtPath:thePath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    return filePath;
 }
 
 // imp 即 implementation ，表示由编译器生成的、指向实现方法的指针

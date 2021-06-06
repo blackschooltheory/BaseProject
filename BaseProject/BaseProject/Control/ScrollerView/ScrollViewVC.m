@@ -41,7 +41,7 @@
     testScrollview.maximumZoomScale = 2;
     [testScrollview setZoomScale:1.00 animated:YES];
     
-    
+
     /*
      
     //绘制坐标

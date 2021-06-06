@@ -15,7 +15,24 @@
 @end
 
 @implementation LoadSVGVC
-
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+//        self.view.backgroundColor = [UIColor blueColor];
+    }
+    return self;
+}
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.view.backgroundColor = [UIColor blueColor];
+    }
+    return self;
+}
+- (void)loadView{
+//    [super loadView];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -47,7 +64,8 @@
         make.top.equalTo(button.mas_bottom).offset(50);
     }];
     
-    
+    UILabel *label = [[UILabel alloc]init];
+    [label sizeToFit];
     
     
     
