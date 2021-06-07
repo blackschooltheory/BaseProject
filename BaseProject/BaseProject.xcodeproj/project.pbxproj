@@ -53,6 +53,7 @@
 		4A98CC252610A3440047EB7F /* BlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A98CC242610A3440047EB7F /* BlockVC.m */; };
 		4A98CC2A2610B8E70047EB7F /* BlockMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A98CC292610B8E70047EB7F /* BlockMode.m */; };
 		4A9D4F6A2652130F00F9A944 /* Carsh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D4F692652130F00F9A944 /* Carsh.m */; };
+		4ABD797D266DB2FB00C63EB3 /* BaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABD797C266DB2FB00C63EB3 /* BaseNavViewController.m */; };
 		4AC3768625FF09CA00026C69 /* StringChageType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3768525FF09CA00026C69 /* StringChageType.m */; };
 		4AC3768C25FF376500026C69 /* DLKWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3768B25FF376500026C69 /* DLKWebViewVC.m */; };
 		4AC37703260201F800026C69 /* GCDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC37702260201F800026C69 /* GCDVC.m */; };
@@ -158,6 +159,8 @@
 		4A98CC292610B8E70047EB7F /* BlockMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockMode.m; sourceTree = "<group>"; };
 		4A9D4F682652130F00F9A944 /* Carsh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Carsh.h; sourceTree = "<group>"; };
 		4A9D4F692652130F00F9A944 /* Carsh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Carsh.m; sourceTree = "<group>"; };
+		4ABD797B266DB2FB00C63EB3 /* BaseNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavViewController.h; sourceTree = "<group>"; };
+		4ABD797C266DB2FB00C63EB3 /* BaseNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavViewController.m; sourceTree = "<group>"; };
 		4AC3768425FF09CA00026C69 /* StringChageType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringChageType.h; sourceTree = "<group>"; };
 		4AC3768525FF09CA00026C69 /* StringChageType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringChageType.m; sourceTree = "<group>"; };
 		4AC3768A25FF376500026C69 /* DLKWebViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLKWebViewVC.h; sourceTree = "<group>"; };
@@ -507,6 +510,8 @@
 			children = (
 				4AD6C1B325E0B8F90048A9CC /* BaseViewController.h */,
 				4AD6C1B425E0B8F90048A9CC /* BaseViewController.m */,
+				4ABD797B266DB2FB00C63EB3 /* BaseNavViewController.h */,
+				4ABD797C266DB2FB00C63EB3 /* BaseNavViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -776,6 +781,7 @@
 				4A726CF3266613760024010A /* ScrollViewVC.m in Sources */,
 				4A7CCE7D259227E900324B41 /* FunctionVC.m in Sources */,
 				4A7CCD11258E2F3E00324B41 /* LaunchVC.m in Sources */,
+				4ABD797D266DB2FB00C63EB3 /* BaseNavViewController.m in Sources */,
 				FC0D5D75263998EF00509E71 /* RunTimeVC.m in Sources */,
 				4A7F3063261ED9C40055D9DE /* RunloopVC.m in Sources */,
 				FCCC4CE2264AB4BC00C0C554 /* OneModel.m in Sources */,

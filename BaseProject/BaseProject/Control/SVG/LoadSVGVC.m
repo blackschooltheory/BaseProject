@@ -26,16 +26,25 @@
 {
     self = [super init];
     if (self) {
-        self.view.backgroundColor = [UIColor blueColor];
+       // self.view.backgroundColor = [UIColor blueColor];
+      
     }
     return self;
 }
 - (void)loadView{
-//    [super loadView];
+    //通过代码实践发现
+//    [super loadView];// loadView  会默认调用，如果不调用 super 方法会崩溃
+    self.view = [[UIView alloc]init];
+//    self.view.backgroundColor  = [UIColor redColor];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+//    self.view.backgroundColor = [UIColor blueColor];
+    
+    UISplitViewController *ddd = [[UISplitViewController alloc]initWithStyle:UISplitViewControllerStyleUnspecified];
+    
+    
     
     NSArray *titleArr = @[@"加载SVG图片"];
     UIButton *button = [[UIButton alloc]init];

@@ -37,6 +37,7 @@
     [self.view addSubview:self.tableView];
     
 }
+
 -(UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 88, self.view.frame.size.width, self.view.frame.size.height-88) style:UITableViewStylePlain];
