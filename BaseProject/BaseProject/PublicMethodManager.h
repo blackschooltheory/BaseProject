@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 //系统的弹框
 +(void)alertTitle:(NSString *)title;
 //解析url 入参信息
-+(NSDictionary *)getURLParamsWithUrlStr:(NSString *)urlStr;
++( nullable NSDictionary *)getURLParamsWithUrlStr:(NSString *)urlStr;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,7 +12,8 @@
 #import "FrameworkVC.h"
 #import "Performance.h"
 #import "Carsh.h"
-
+#import <SystemConfiguration/CaptiveNetwork.h>
+#import "ProxyStatus.h"
 @interface AppDelegate ()
 @property (assign, nonatomic) UIBackgroundTaskIdentifier backgroundId;
 @property (assign, nonatomic) UIBackgroundTaskIdentifier backIden;
@@ -63,7 +64,7 @@ static NSString  const * PrivacyPolicy = @"PrivacyPolicy";
 //    CGAffineTransformMakeRotation(M_PI_4);
 //    [self adViewLaunch];
     
-    if ([self getProxyStatus]) {
+    if ([ProxyStatus getProxyStatus]) {
         [PublicMethodManager alertTitle:@"当前是代理环境！"];
     }
     
@@ -74,23 +75,17 @@ static NSString  const * PrivacyPolicy = @"PrivacyPolicy";
     return YES;
 }
 
-#pragma  mark--------判断APP是否处于代理的环境下
-
--(BOOL)getProxyStatus {
-    CFDictionaryRef dicRef = CFNetworkCopySystemProxySettings();
-
-    const CFStringRef proxyCFstr = CFDictionaryGetValue(dicRef, (const void*)kCFNetworkProxiesHTTPProxy);
-
-    NSString* proxy = (__bridge NSString *) (proxyCFstr);
-
-     if (proxy) {
-        return YES;
+- (id)fetchSSIDInfo {
+    NSArray *ifs = (__bridge_transfer id) CNCopySupportedInterfaces();
+    NSLog(@"Supported interfaces: %@", ifs);
+    id info =nil;
+    for(NSString *ifnam in ifs) {
+        info = (__bridge_transfer id) CNCopyCurrentNetworkInfo((__bridge CFStringRef) ifnam);
+        NSLog(@"代理是%@ => %@", ifnam, info);
+        if(info && [info count]) {break; }
     }
-     else return NO;
+    return info;
 }
-
-
-
 #pragma mark--------监听屏幕旋转的事件
 
 -(void)handleDeviceOrientationChange:(NSNotification *)notif{
@@ -98,10 +93,6 @@ static NSString  const * PrivacyPolicy = @"PrivacyPolicy";
     if (  device.orientation==UIDeviceOrientationLandscapeRight ) {
         [PublicMethodManager alertTitle:@"屏幕旋转了"];
     }
-   
-  
-
-//
 }
 #pragma mark------隐私政策提示
 -(void)privacyPolicy{

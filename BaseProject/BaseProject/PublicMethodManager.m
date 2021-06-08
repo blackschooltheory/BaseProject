@@ -86,7 +86,7 @@
 }
 #pragma mark------获取URL的入参信息
 
-+(NSDictionary *)getURLParamsWithUrlStr:(NSString *)urlStr{
++(  nullable NSDictionary * )getURLParamsWithUrlStr:(NSString *)urlStr{
     NSRange range = [urlStr rangeOfString:@"?"];
     if(range.location==NSNotFound) {
         return nil;

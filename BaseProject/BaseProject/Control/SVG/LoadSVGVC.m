@@ -11,7 +11,7 @@
 #import <Masonry/Masonry.h>
 #import <AFNetworking/AFNetworking.h>
 @interface LoadSVGVC ()
-
+@property(nonatomic,weak) NSString * goodStr;
 @end
 
 @implementation LoadSVGVC
@@ -22,6 +22,13 @@
     }
     return self;
 }
+-(void)awakeFromNib{
+    [super awakeFromNib];
+}
+-(instancetype)initWithCoder:(NSCoder *)coder{
+   self = [super initWithCoder:coder];
+    return self;
+}
 - (instancetype)init
 {
     self = [super init];
@@ -30,6 +37,12 @@
       
     }
     return self;
+}
+-(void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+}
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
 }
 - (void)loadView{
     //通过代码实践发现
@@ -42,10 +55,8 @@
     // Do any additional setup after loading the view.
 //    self.view.backgroundColor = [UIColor blueColor];
     
-    UISplitViewController *ddd = [[UISplitViewController alloc]initWithStyle:UISplitViewControllerStyleUnspecified];
-    
-    
-    
+//    UISplitViewController *ddd = [[UISplitViewController alloc]initWithStyle:UISplitViewControllerStyleUnspecified];
+    _goodStr = @"123";
     NSArray *titleArr = @[@"加载SVG图片"];
     UIButton *button = [[UIButton alloc]init];
     button.backgroundColor = [UIColor blueColor];
@@ -59,6 +70,7 @@
 //    button.tag = 1000;
     [button setTitle:titleArr[0] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+
     
 }
 -(void)btnClick:(UIButton *)button{
@@ -76,6 +88,7 @@
     UILabel *label = [[UILabel alloc]init];
     [label sizeToFit];
     
+    NSLog(@"%@",_goodStr);
     
     
     

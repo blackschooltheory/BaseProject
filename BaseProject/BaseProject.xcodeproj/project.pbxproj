@@ -68,6 +68,7 @@
 		4AEFF71F260D7EA4005771D0 /* ProjectResourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFF71E260D7EA4005771D0 /* ProjectResourceModel.m */; };
 		4AEFF723260D7ED8005771D0 /* ProjectResourceViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFF722260D7ED8005771D0 /* ProjectResourceViewModel.m */; };
 		4AEFF727260D7FC9005771D0 /* ProjectResourceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFF726260D7FC9005771D0 /* ProjectResourceView.m */; };
+		4AF53E7A266F575800FACA28 /* ProxyStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF53E79266F575800FACA28 /* ProxyStatus.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C13826F8FEF65A0AF219020C /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 661437ADCE0B7FEFA75CC2BF /* libPods-BaseProject.a */; };
 		FC0D5D75263998EF00509E71 /* RunTimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0D5D74263998EF00509E71 /* RunTimeVC.m */; };
 		FC142D4A25F65A8D00D8765F /* StringToUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = FC142D4925F65A8D00D8765F /* StringToUnicode.m */; };
@@ -188,6 +189,8 @@
 		4AEFF722260D7ED8005771D0 /* ProjectResourceViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectResourceViewModel.m; sourceTree = "<group>"; };
 		4AEFF725260D7FC9005771D0 /* ProjectResourceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectResourceView.h; sourceTree = "<group>"; };
 		4AEFF726260D7FC9005771D0 /* ProjectResourceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectResourceView.m; sourceTree = "<group>"; };
+		4AF53E78266F575800FACA28 /* ProxyStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProxyStatus.h; sourceTree = "<group>"; };
+		4AF53E79266F575800FACA28 /* ProxyStatus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProxyStatus.m; sourceTree = "<group>"; };
 		661437ADCE0B7FEFA75CC2BF /* libPods-BaseProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BB7A938EF9E8055E80853B /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E7243419E16829FB90BBE7C9 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -512,6 +515,8 @@
 				4AD6C1B425E0B8F90048A9CC /* BaseViewController.m */,
 				4ABD797B266DB2FB00C63EB3 /* BaseNavViewController.h */,
 				4ABD797C266DB2FB00C63EB3 /* BaseNavViewController.m */,
+				4AF53E78266F575800FACA28 /* ProxyStatus.h */,
+				4AF53E79266F575800FACA28 /* ProxyStatus.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -754,6 +759,7 @@
 				4AE2C5C625BE5815003ED184 /* TransitionAnimate.m in Sources */,
 				4A480AA82657885F003E13AF /* MoreAlertVC.m in Sources */,
 				4AEFF723260D7ED8005771D0 /* ProjectResourceViewModel.m in Sources */,
+				4AF53E7A266F575800FACA28 /* ProxyStatus.m in Sources */,
 				4A98CC2A2610B8E70047EB7F /* BlockMode.m in Sources */,
 				4A9848E82662250A004B4C56 /* LoadSVGVC.m in Sources */,
 				4A54BCD325C3E8C4000BA17B /* ForbidCatchScreenVC.m in Sources */,
@@ -938,6 +944,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = QKE34TA3JX;
 				INFOPLIST_FILE = BaseProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
