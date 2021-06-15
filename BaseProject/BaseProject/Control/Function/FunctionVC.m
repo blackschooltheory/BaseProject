@@ -24,6 +24,7 @@
 #import "LoadSVGVC.h"
 #import "ScrollViewVC.h"
 #import "SplitViewController.h"
+#import "TimerVC.h"
 @interface FunctionVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSArray * dataArry;
@@ -34,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _dataArry = @[@"横竖屏控制",@"转屏动画",@"截屏获取通知（iOS 不能实现禁止截屏功能）",@"系统日历写入提示信息",@"设备root环境监测",@"UTF-8与Unicode转换",@"GCD",@"项目资源文件管理",@"Block",@"Runloop",@"wkWebView",@"tableViewStance",@"addChildViewController",@"SVG加载图片",@"ScrollViewVC",@"SplitViewController"];
+    _dataArry = @[@"横竖屏控制",@"转屏动画",@"截屏获取通知（iOS 不能实现禁止截屏功能）",@"系统日历写入提示信息",@"设备root环境监测",@"UTF-8与Unicode转换",@"GCD",@"项目资源文件管理",@"Block",@"Runloop",@"wkWebView",@"tableViewStance",@"addChildViewController",@"SVG加载图片",@"ScrollViewVC",@"SplitViewController",@"TimerVC"];
     [self.view addSubview:self.tableView];
     
 }
@@ -165,6 +166,13 @@
        
         [self.navigationController pushViewController:vc animated:YES];
     }
+    else if (indexPath.row == 16){
+        TimerVC *vc = [[TimerVC alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+       
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    //
     
     
 }
