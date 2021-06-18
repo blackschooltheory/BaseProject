@@ -7,9 +7,13 @@
 //
 
 #import "NSTimer+HeapLeak.h"
-
+//#import "PublicMethodManager.h"
 @implementation NSTimer (HeapLeak)
-+(void) fileTimer{
-    [[self class] scheduledTimerWithTimeInterval:1 target:self selector:@selector(click) userInfo:nil repeats:YES];
-}
+//-(void)timeClick{
+//    NSLog(@"------%@----",[self class]);
+//    self.numIndex ++;
+//    if (self.numIndex == 5) {
+//        [PublicMethodManager alertTitle:@"显示弹框"];
+//    }
+//}
 @end

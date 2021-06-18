@@ -66,6 +66,11 @@
 		4AE006F225BFA4B5001300EC /* LandscapeLeftVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE006F125BFA4B5001300EC /* LandscapeLeftVC.m */; };
 		4AE2C5C625BE5815003ED184 /* TransitionAnimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2C5C525BE5815003ED184 /* TransitionAnimate.m */; };
 		4AE5F9B92678458600361F71 /* TimerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F9B82678458600361F71 /* TimerModel.m */; };
+		4AE5F9D026799D2100361F71 /* ProtocolVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F9CF26799D2100361F71 /* ProtocolVC.m */; };
+		4AE5F9D52679A65400361F71 /* ProtocolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5F9D42679A65400361F71 /* ProtocolCell.m */; };
+		4AE5FA65267AEDB100361F71 /* TimerVC+invarcatFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5FA64267AEDB100361F71 /* TimerVC+invarcatFunction.m */; };
+		4AE5FA6D267B39CC00361F71 /* UIView+touch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5FA6C267B39CC00361F71 /* UIView+touch.m */; };
+		4AE5FA71267B466E00361F71 /* timerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5FA70267B466E00361F71 /* timerView.m */; };
 		4AE77FF726330619008810E5 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 4AE77FF626330619008810E5 /* index.html */; };
 		4AEFF71A260D7550005771D0 /* ProjectResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFF719260D7550005771D0 /* ProjectResourceManager.m */; };
 		4AEFF71F260D7EA4005771D0 /* ProjectResourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEFF71E260D7EA4005771D0 /* ProjectResourceModel.m */; };
@@ -193,6 +198,16 @@
 		4AE2C5C525BE5815003ED184 /* TransitionAnimate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimate.m; sourceTree = "<group>"; };
 		4AE5F9B72678458600361F71 /* TimerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerModel.h; sourceTree = "<group>"; };
 		4AE5F9B82678458600361F71 /* TimerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerModel.m; sourceTree = "<group>"; };
+		4AE5F9CE26799D2100361F71 /* ProtocolVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProtocolVC.h; sourceTree = "<group>"; };
+		4AE5F9CF26799D2100361F71 /* ProtocolVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtocolVC.m; sourceTree = "<group>"; };
+		4AE5F9D32679A65400361F71 /* ProtocolCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProtocolCell.h; sourceTree = "<group>"; };
+		4AE5F9D42679A65400361F71 /* ProtocolCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtocolCell.m; sourceTree = "<group>"; };
+		4AE5FA63267AEDB100361F71 /* TimerVC+invarcatFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimerVC+invarcatFunction.h"; sourceTree = "<group>"; };
+		4AE5FA64267AEDB100361F71 /* TimerVC+invarcatFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TimerVC+invarcatFunction.m"; sourceTree = "<group>"; };
+		4AE5FA6B267B39CC00361F71 /* UIView+touch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+touch.h"; sourceTree = "<group>"; };
+		4AE5FA6C267B39CC00361F71 /* UIView+touch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+touch.m"; sourceTree = "<group>"; };
+		4AE5FA6F267B466E00361F71 /* timerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = timerView.h; sourceTree = "<group>"; };
+		4AE5FA70267B466E00361F71 /* timerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = timerView.m; sourceTree = "<group>"; };
 		4AE77FF626330619008810E5 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		4AEFF718260D7550005771D0 /* ProjectResourceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectResourceManager.h; sourceTree = "<group>"; };
 		4AEFF719260D7550005771D0 /* ProjectResourceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectResourceManager.m; sourceTree = "<group>"; };
@@ -334,9 +349,7 @@
 		4A64C230257E5FE400C4C5F5 /* BaseProject */ = {
 			isa = PBXGroup;
 			children = (
-				4A9848BE265F34D6004B4C56 /* TableView */,
-				FCF4AFA9265D42630077B328 /* KVO */,
-				FCEA089A265BD620000E238D /* TableStance */,
+				4AE5F9CD26799CEE00361F71 /* Protocol */,
 				FCCC4CD5264AA91400C0C554 /* Catgory */,
 				4AD6C1B225E0B8B60048A9CC /* Base */,
 				4A7CCE77259225CF00324B41 /* Control */,
@@ -389,6 +402,9 @@
 		4A7CCE77259225CF00324B41 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				4A9848BE265F34D6004B4C56 /* TableView */,
+				FCF4AFA9265D42630077B328 /* KVO */,
+				FCEA089A265BD620000E238D /* TableStance */,
 				4AF53EC12670B9FF00FACA28 /* Timer */,
 				4AF53EA826709A9900FACA28 /* SplitViewController */,
 				4A726CF02666135C0024010A /* ScrollerView */,
@@ -575,6 +591,17 @@
 			path = TransitionAnimate;
 			sourceTree = "<group>";
 		};
+		4AE5F9CD26799CEE00361F71 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				4AE5F9CE26799D2100361F71 /* ProtocolVC.h */,
+				4AE5F9CF26799D2100361F71 /* ProtocolVC.m */,
+				4AE5F9D32679A65400361F71 /* ProtocolCell.h */,
+				4AE5F9D42679A65400361F71 /* ProtocolCell.m */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		4AEFF717260D74A3005771D0 /* StorageCacheFile */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +639,12 @@
 				4AC81DBB26734DFF005A298E /* TimerVC.m */,
 				4AE5F9B72678458600361F71 /* TimerModel.h */,
 				4AE5F9B82678458600361F71 /* TimerModel.m */,
+				4AE5FA63267AEDB100361F71 /* TimerVC+invarcatFunction.h */,
+				4AE5FA64267AEDB100361F71 /* TimerVC+invarcatFunction.m */,
+				4AE5FA6B267B39CC00361F71 /* UIView+touch.h */,
+				4AE5FA6C267B39CC00361F71 /* UIView+touch.m */,
+				4AE5FA6F267B466E00361F71 /* timerView.h */,
+				4AE5FA70267B466E00361F71 /* timerView.m */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -802,6 +835,7 @@
 			files = (
 				4AC3768C25FF376500026C69 /* DLKWebViewVC.m in Sources */,
 				4A98CC252610A3440047EB7F /* BlockVC.m in Sources */,
+				4AE5FA65267AEDB100361F71 /* TimerVC+invarcatFunction.m in Sources */,
 				4A9D4F6A2652130F00F9A944 /* Carsh.m in Sources */,
 				FCF4AFAC265D42830077B328 /* KVOModel.m in Sources */,
 				4A294DAB262E7F420038B11B /* TwoVC.m in Sources */,
@@ -809,6 +843,7 @@
 				4A7F3068261EDB9C0055D9DE /* TableRunLoopCell.m in Sources */,
 				4AF53EAB26709ACD00FACA28 /* SplitViewController.m in Sources */,
 				4AE2C5C625BE5815003ED184 /* TransitionAnimate.m in Sources */,
+				4AE5F9D026799D2100361F71 /* ProtocolVC.m in Sources */,
 				4AF53EB62670A09C00FACA28 /* MasterVC.m in Sources */,
 				4AF53EC42670BA4E00FACA28 /* NSTimer+HeapLeak.m in Sources */,
 				4A480AA82657885F003E13AF /* MoreAlertVC.m in Sources */,
@@ -822,6 +857,7 @@
 				4A9848D32660C4F9004B4C56 /* UIFont+AutormaticFont.m in Sources */,
 				4AD6C1C225E3DFEC0048A9CC /* CalendarsNotifVC.m in Sources */,
 				4AC81DC026735D35005A298E /* NSURLSession+Proxy.m in Sources */,
+				4AE5FA71267B466E00361F71 /* timerView.m in Sources */,
 				4A7CCE812592280D00324B41 /* FrameworkVC.m in Sources */,
 				4A9848C1265F3538004B4C56 /* TemplateTableViewVC.m in Sources */,
 				4AEFF71A260D7550005771D0 /* ProjectResourceManager.m in Sources */,
@@ -846,6 +882,8 @@
 				4A7CCD11258E2F3E00324B41 /* LaunchVC.m in Sources */,
 				4ABD797D266DB2FB00C63EB3 /* BaseNavViewController.m in Sources */,
 				FC0D5D75263998EF00509E71 /* RunTimeVC.m in Sources */,
+				4AE5FA6D267B39CC00361F71 /* UIView+touch.m in Sources */,
+				4AE5F9D52679A65400361F71 /* ProtocolCell.m in Sources */,
 				4A7F3063261ED9C40055D9DE /* RunloopVC.m in Sources */,
 				FCCC4CE2264AB4BC00C0C554 /* OneModel.m in Sources */,
 				FCEA08A2265BD827000E238D /* TableStanceView.m in Sources */,

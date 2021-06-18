@@ -67,6 +67,9 @@
                    // 上传
                    NSLog(@"fileName : %@", fileName);
                    // [self uploadingWithFileData:fileData fileName:fileName fileURL:newURL];
+                   
+                   NSString *base64string = [fileData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+
                }
                [self dismissViewControllerAnimated:YES completion:NULL];
            }];

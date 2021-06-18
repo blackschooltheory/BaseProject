@@ -25,6 +25,7 @@
 #import "ScrollViewVC.h"
 #import "SplitViewController.h"
 #import "TimerVC.h"
+#import "TimerVC+invarcatFunction.h"
 @interface FunctionVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSArray * dataArry;

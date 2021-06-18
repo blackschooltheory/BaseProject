@@ -8,8 +8,12 @@
 
 #import "TimerVC.h"
 #import "TimerModel.h"
+#import "UIView+touch.h"
+#import <Masonry/Masonry.h>
+#import "timerView.h"
 @interface TimerVC ()
 @property(nonatomic,strong)NSTimer *timer;
+@property(nonatomic,assign)NSInteger numIndex;
 @end
 
 @implementation TimerVC
@@ -22,14 +26,53 @@
     /*
       把model换成 NSProxy 更加的轻量;
      */
+    /*
+     
+     
     TimerModel *model = [TimerModel new];
     model.targetVC = self;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:model selector:@selector(timeClick) userInfo:nil repeats:YES];
+    _numIndex = 0;
+     
+     */
+    
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    button.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    
+//    self.view.userInteractionEnabled = NO;
+//    button.userInteractionEnabled = YES;
+    [self.view ggggg];
+    
+    timerView *vv = [[timerView alloc]init];
+    [self.view addSubview:vv];
+    [vv mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(button.mas_bottom).offset(30);
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.centerY.equalTo(self.view.mas_centerY);
+        make.width.mas_offset(100);
+        make.height.mas_offset(100);
+    }];
+    
     
     
 }
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    NSLog(@"touch 了");
+}
+-(void)btnClick{
+    NSLog(@"按钮点击");
+}
 -(void)timeClick{
     NSLog(@"------%@----",[self class]);
+    _numIndex ++;
+    if (_numIndex == 5) {
+        [PublicMethodManager alertTitle:@"显示弹框"];
+    }
+    
+    
 }
 -(void)dealloc{
     NSLog(@"------%@ delloc----",[self class]);

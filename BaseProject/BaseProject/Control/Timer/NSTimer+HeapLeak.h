@@ -11,8 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSTimer (HeapLeak)
-
-
+//@property(nonatomic,assign)NSInteger numIndex;
+//-(void)timeClick;
 @end
 
 NS_ASSUME_NONNULL_END
