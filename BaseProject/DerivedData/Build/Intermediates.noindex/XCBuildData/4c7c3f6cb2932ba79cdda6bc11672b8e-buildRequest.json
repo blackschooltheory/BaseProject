@@ -1,0 +1,57 @@
+{
+  "buildCommand" : "prepareForIndexing",
+  "configuredTargets" : [
+    {
+      "guid" : "466253d6185aea05714fe5094563f4266b2d4fb788b6b06011f796215b92043b"
+    }
+  ],
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64e",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : true,
+      "platform" : "iphoneos",
+      "sdk" : "iphoneos14.5",
+      "sdkVariant" : "iphoneos",
+      "supportedArchitectures" : [
+        "armv4t",
+        "armv5",
+        "armv6",
+        "armv7",
+        "armv7f",
+        "armv7s",
+        "armv7k",
+        "arm64",
+        "arm64e"
+      ],
+      "targetArchitecture" : "arm64e"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/mac/Documents/GitHub/BaseProject/BaseProject/DerivedData/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/mac/Documents/GitHub/BaseProject/BaseProject/DerivedData/Build/Products",
+      "derivedDataPath" : "/Users/mac/Documents/GitHub/BaseProject/BaseProject/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/mac/Documents/GitHub/BaseProject/BaseProject/DerivedData/BaseProject/Index/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/mac/Documents/GitHub/BaseProject/BaseProject/DerivedData/BaseProject/Index/PrecompiledHeaders",
+      "pchPath" : "/Users/mac/Documents/GitHub/BaseProject/BaseProject/DerivedData/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

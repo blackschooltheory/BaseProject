@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import <dlfcn.h>
+#import <libkern/OSAtomic.h>
+
 
 @interface ViewController ()
 

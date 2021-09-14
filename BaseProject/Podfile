@@ -4,4 +4,5 @@ target 'BaseProject' do
 pod 'Masonry'
 pod 'AFNetworking'
 pod 'SVGKit'
+pod 'SDWebImage'
 end

@@ -26,6 +26,7 @@
 #import "SplitViewController.h"
 #import "TimerVC.h"
 #import "TimerVC+invarcatFunction.h"
+#import "Animation_StudyVC.h"
 @interface FunctionVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSArray * dataArry;
@@ -36,7 +37,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _dataArry = @[@"横竖屏控制",@"转屏动画",@"截屏获取通知（iOS 不能实现禁止截屏功能）",@"系统日历写入提示信息",@"设备root环境监测",@"UTF-8与Unicode转换",@"GCD",@"项目资源文件管理",@"Block",@"Runloop",@"wkWebView",@"tableViewStance",@"addChildViewController",@"SVG加载图片",@"ScrollViewVC",@"SplitViewController",@"TimerVC"];
+    _dataArry = @[@"横竖屏控制",@"转屏动画",@"截屏获取通知（iOS 不能实现禁止截屏功能）",@"系统日历写入提示信息",@"设备root环境监测",@"UTF-8与Unicode转换",@"GCD",@"项目资源文件管理",@"Block",@"Runloop",@"wkWebView",@"tableViewStance",@"addChildViewController",@"SVG加载图片",@"ScrollViewVC",@"SplitViewController",@"TimerVC",@"animition"];
     [self.view addSubview:self.tableView];
     
 }
@@ -94,16 +95,19 @@
     }
     if (indexPath.row==3) {
         //系统日历写入事件
-//        CalendarsNotifVC *vc = [[CalendarsNotifVC alloc]init];
-//        vc.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:vc animated:YES];
+        RunloopVC *vc = [[RunloopVC alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
         
 //        NSString *sss = [self versionFill:@"1.1.9"];
 //        NSString *aaa = [self versionFill:@"1.1.10"];
 //
 //        NSLog(@"234");
-        NSArray *arr = @[@"1",@"2",@"3"];
-        NSLog(@"%@",arr[6]);
+//        NSArray *arr = @[@"1",@"2",@"3"];
+//        NSLog(@"%@",arr[6]);
+        
+        
+        
         
         
         
@@ -169,6 +173,11 @@
     }
     else if (indexPath.row == 16){
         TimerVC *vc = [[TimerVC alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+       
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 17){
+        Animation_StudyVC *vc = [[Animation_StudyVC alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
        
         [self.navigationController pushViewController:vc animated:YES];
