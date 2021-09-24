@@ -41,7 +41,14 @@
     titleBtn.backgroundColor=[UIColor blueColor];
     [self.view addSubview:titleBtn];
 }
-
+//是否隐藏状态栏
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+//状态栏样式
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
+}
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
