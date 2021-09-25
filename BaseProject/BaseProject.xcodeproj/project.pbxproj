@@ -99,7 +99,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0474CA2326AEF7C70070C7A9 /* text.order */ = {isa = PBXFileReference; lastKnownFileType = text; path = text.order; sourceTree = SOURCE_ROOT; };
+		0474CA2326AEF7C70070C7A9 /* text.order */ = {isa = PBXFileReference; lastKnownFileType = text; name = text.order; path = BaseProject/text.order; sourceTree = SOURCE_ROOT; };
 		04B042EF26C4013B002DEAC4 /* AnimationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationVC.h; sourceTree = "<group>"; };
 		04B042F026C4013B002DEAC4 /* AnimationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationVC.m; sourceTree = "<group>"; };
 		04B042F226C40836002DEAC4 /* Animation_StudyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animation_StudyVC.h; sourceTree = "<group>"; };
@@ -272,14 +272,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0474CA2226AEF7A10070C7A9 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				0474CA2326AEF7C70070C7A9 /* text.order */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
 		04B042EE26C4011D002DEAC4 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,7 +368,7 @@
 		4A64C230257E5FE400C4C5F5 /* BaseProject */ = {
 			isa = PBXGroup;
 			children = (
-				0474CA2226AEF7A10070C7A9 /* Source */,
+				0474CA2326AEF7C70070C7A9 /* text.order */,
 				4AE5F9CD26799CEE00361F71 /* Protocol */,
 				FCCC4CD5264AA91400C0C554 /* Catgory */,
 				4AD6C1B225E0B8B60048A9CC /* Base */,
@@ -1076,12 +1068,12 @@
 				DEVELOPMENT_TEAM = QKE34TA3JX;
 				INFOPLIST_FILE = BaseProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_GENERATE_MAP_FILE = YES;
+				LD_GENERATE_MAP_FILE = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				ORDER_FILE = /Users/mac/Documents/GitHub/BaseProject/BaseProject/text.order;
+				ORDER_FILE = "";
 				OTHER_CFLAGS = "-fsanitize-coverage=func,trace-pc-guard";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dlk.function.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1100,12 +1092,12 @@
 				DEVELOPMENT_TEAM = QKE34TA3JX;
 				INFOPLIST_FILE = BaseProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_GENERATE_MAP_FILE = YES;
+				LD_GENERATE_MAP_FILE = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				ORDER_FILE = /Users/mac/Documents/GitHub/BaseProject/BaseProject/text.order;
+				ORDER_FILE = "";
 				OTHER_CFLAGS = "-fsanitize-coverage=func,trace-pc-guard";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dlk.function.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
